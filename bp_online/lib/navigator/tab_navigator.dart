@@ -14,7 +14,7 @@ class DoubanAppState extends State<Bpline> with SingleTickerProviderStateMixin {
 
   @override
   void initState() {
-    controller = new TabController(length: 2, vsync: this);
+    controller = new TabController(length: 1, vsync: this);
   }
 
   @override
@@ -30,7 +30,6 @@ class DoubanAppState extends State<Bpline> with SingleTickerProviderStateMixin {
         body: new TabBarView(
           controller: controller,
           children: [
-            new Home(),
             new Dis(),
           ],
         ),
@@ -39,12 +38,6 @@ class DoubanAppState extends State<Bpline> with SingleTickerProviderStateMixin {
           child: new TabBar(
             controller: controller,
             tabs: [
-              new Tab(
-                text: "首页",
-                icon: new Icon(
-                  Icons.movie,
-                ),
-              ),
               new Tab(
                 text: "发现",
                 icon: new Icon(
