@@ -6,10 +6,10 @@ class Dis extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Dis"),
+        title: Text("发现"),
       ),
       body: Center(
-        child: Text("This is new route"),
+        child: Text("This is new route ！！！"),
       ),
     );
   }

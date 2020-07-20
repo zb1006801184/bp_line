@@ -1,18 +1,19 @@
+
 import 'package:flutter/material.dart';
 
-class Home extends StatelessWidget {
+class Test extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("首页"),
+        title: Text("test"),
       ),
       body: Center(
         child: FlatButton(
-              child: Text("button click !!"),
+              child: Text("test"),
               textColor: Colors.red,
               onPressed: () {
-                Navigator.of(context).pushNamed("/test");
+                print("zzz");
               },
             ),
       ),

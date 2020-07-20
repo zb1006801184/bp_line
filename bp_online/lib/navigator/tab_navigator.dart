@@ -2,18 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:bp_online/page/home.dart';
 import 'package:bp_online/page/dis.dart';
 
-//tabbar  底部  
-
+//tabbar  底部
 
 class Bpline extends StatefulWidget {
-
   @override
   DoubanAppState createState() => new DoubanAppState();
 }
 
-
-class DoubanAppState extends State<Bpline>
-    with SingleTickerProviderStateMixin {
+class DoubanAppState extends State<Bpline> with SingleTickerProviderStateMixin {
   TabController controller;
 
   @override
@@ -57,7 +53,6 @@ class DoubanAppState extends State<Bpline>
               ),
             ],
           ),
-          
         ),
       ),
     );
