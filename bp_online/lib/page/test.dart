@@ -8,16 +8,31 @@ class Test extends StatelessWidget {
       appBar: AppBar(
         title: Text("test"),
       ),
-      body: Center(
-        child: FlatButton(
-              child: Text("test"),
-              textColor: Colors.red,
-              onPressed: () {
-                print("zzz");
-              },
-            ),
+      body: ListView(
+        children: <Widget>[
+            ListTile(title: Text("普通ListView")),
+            ListTile(
+                title: Text("ListView.build"),
+                onTap: () {
+                  Navigator.pushNamed(context, '/listview_build');
+                }),
+            ListTile(
+                title: Text("ListView.buildMultiTypeItem"),
+                onTap: () {
+                  Navigator.pushNamed(context, '/listview_build_multi');
+                }),
+            ListTile(
+                title: Text("ListView.seperate"),
+                onTap: () {
+                  Navigator.pushNamed(context, '/listview_separate');
+                }),
+            ListTile(
+                title: Text("ListView.suctom"),
+                onTap: () {
+                  Navigator.pushNamed(context, '/listview_custom');
+                }),
+          ],
       ),
-      
     );
   }
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'test.dart';
+import 'package:bp_online/demo/list_view.dart';
 class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -14,7 +15,7 @@ class Home extends StatelessWidget {
           onPressed: () {
             Navigator.push(
               context,
-              new MaterialPageRoute(builder: (context) => new Test()),
+              new MaterialPageRoute(builder: (context) => new InfiniteListView()),
             );
           },
         ),

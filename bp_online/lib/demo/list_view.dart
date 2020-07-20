@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:english_words/english_words.dart';
+import 'package:english_words/english_words.dart'; //随机生成单纯的库
 class InfiniteListView extends StatefulWidget {
   @override
   _InfiniteListViewState createState() => new _InfiniteListViewState();
