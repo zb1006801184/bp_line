@@ -4,7 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter/rendering.dart' show debugPaintSizeEnabled;
 
 void main() {
-    debugPaintSizeEnabled = true;      //打开视觉调试开关
+    debugPaintSizeEnabled = false;      //打开视觉调试开关
   runApp(MyApp());
 }
 
