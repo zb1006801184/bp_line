@@ -45,52 +45,54 @@ class Person extends StatelessWidget {
                     constraints:
                         BoxConstraints.tightForFinite(width: width, height: 92),
                     child: Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: <Widget>[
-                          //头像
-                          Container(
-                            margin: EdgeInsets.only(left: 16),
-                            child: Image(
-                              image: AssetImage("images/home_pic_start.png"),
-                              width: 72,
-                              height: 72,
-                            ),
-                          ),
-                          //电话
-                          Padding(
-                            padding: EdgeInsets.only(left: 16, top: 29),
-                            child: Text(
-                              "18802013843",
-                              style: TextStyle(
-                                color: Colors.black,
-                                fontSize: 18.0,
-                                height: 1,
-                                fontFamily: "PingFangSC-Medium",
-                                fontWeight: FontWeight.w500,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: <Widget>[
+                        Row(
+                            // mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: <Widget>[
+                              //头像
+                              Container(
+                                margin: EdgeInsets.only(left: 16),
+                                child: Image(
+                                  image:
+                                      AssetImage("images/home_pic_start.png"),
+                                  width: 72,
+                                  height: 72,
+                                ),
                               ),
-                            ),
-                          ),
-                        //返回按钮
-                        Center(
-                            // padding: EdgeInsets.only( top: 30,right:0),
-                            // alignment: FractionalOffset(0.2, 0.6),
-                              // decoration: BoxDecoration(color: Colors.red),
-
-                          child: Container(
-                            color: Colors.red,
-                            child: Image(
-                              image: AssetImage("images/list_icon_goto_gray.png"),
+                              //电话
+                              Padding(
+                                padding: EdgeInsets.only(left: 16, top: 29),
+                                child: Text(
+                                  "18802013843",
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 18.0,
+                                    height: 1,
+                                    fontFamily: "PingFangSC-Medium",
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                ),
                               ),
-                          ),
-                          )
-                          
-
-                        ]),
+                              
+                            ]),
+                      
+                        Container(
+                                padding: EdgeInsets.only( right: 16),
+                                child: Container(
+                                  color: Colors.red,
+                                  child: Image(
+                                    image: AssetImage(
+                                        "images/list_icon_goto_gray.png"),
+                                  ),
+                                ),
+                              )
+                      ],
+                    ),
                   ),
-                  onTap: () => {
-                    print("点击了个人信息")
-                  }, //点击
+                  onTap: () => {print("点击了个人信息")}, //点击
                 )
               ],
             ),
