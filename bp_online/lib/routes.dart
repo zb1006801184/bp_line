@@ -5,6 +5,8 @@ import 'page/home.dart';
 import 'page/test.dart';
 import 'demo/list_view.dart';
 import 'demo/text_demo.dart';
+import 'demo/layout_view.dart';
+import 'bp_project/person_page.dart';
 
 final routes = {
   '/': (context) => Home(),
@@ -12,6 +14,8 @@ final routes = {
   '/test': (context, {arguments}) => Test(),
   '/listView': (context) => simpleListView(),
   '/textDemo': (context) => textDemo(),
+  '/LayoutView': (context) => layoutView(),
+  '/Person': (context) => Person(),
 };
 
 var onGenerateRoute = (RouteSettings settings) {

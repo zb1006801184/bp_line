@@ -6,10 +6,10 @@ import 'package:bp_online/page/dis.dart';
 
 class Bpline extends StatefulWidget {
   @override
-  DoubanAppState createState() => new DoubanAppState();
+  BpAppState createState() => new BpAppState();
 }
 
-class DoubanAppState extends State<Bpline> with SingleTickerProviderStateMixin {
+class BpAppState extends State<Bpline> with SingleTickerProviderStateMixin {
   TabController controller;
 
   @override
