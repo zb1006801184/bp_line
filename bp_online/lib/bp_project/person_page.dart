@@ -17,6 +17,7 @@ class Person extends StatelessWidget {
         mainAxisSize: MainAxisSize.max,
         children: <Widget>[
           //头部视图
+          
           Container(
             color: Colors.white,
             constraints:
