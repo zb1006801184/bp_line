@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'demo/list_view.dart';
+import 'demo/list_view.dart';
 import 'page/dis.dart';
 import 'page/home.dart';
 import 'page/test.dart';
@@ -16,6 +17,7 @@ final routes = {
   '/textDemo': (context) => textDemo(),
   '/LayoutView': (context) => layoutView(),
   '/Person': (context) => Person(),
+  '/TestList': (context) => InfiniteListView(),
 };
 
 var onGenerateRoute = (RouteSettings settings) {

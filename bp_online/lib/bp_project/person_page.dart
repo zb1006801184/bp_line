@@ -1,8 +1,22 @@
 import 'package:flutter/material.dart';
 import 'dart:ui';
 import 'package:flutter/services.dart';
+import 'package:english_words/english_words.dart'; //随机生成单纯的库
 
-class Person extends StatelessWidget {
+class Person extends StatefulWidget {
+  @override
+  _PersonState createState() => _PersonState();
+}
+
+class _PersonState extends State<Person> {
+  var _words = <String>[];
+
+  @override
+  void initState() {
+    super.initState();
+    _retrieveData();
+  }
+
   final width = window.physicalSize.width / 2;
   final height = window.physicalSize.height / 2;
 
@@ -35,7 +49,7 @@ class Person extends StatelessWidget {
                         IconButton(
                           icon: Icon(Icons.settings),
                           onPressed: () {
-                            print("点击设置$width");
+                            print("点击设置$width zz");
                           },
                         ),
                       ],
@@ -108,11 +122,11 @@ class Person extends StatelessWidget {
           ),
           //listView
           Container(
-            height: height - 156,
+            height: height - 156 - 63,
             color: const Color(0xFFF4F5F7),
             child: ListView.builder(
-                itemCount: 10,
-                itemExtent: 128.0, 
+                itemCount: _words.length,
+                itemExtent: 128.0,
                 itemBuilder: (BuildContext context, int index) {
                   return InkWell(
                     child: Container(
@@ -157,7 +171,7 @@ class Person extends StatelessWidget {
                           Container(
                             margin: EdgeInsets.only(left: 12),
                             child: Text(
-                              "项目名称",
+                              "项目名称：" + _words[index],
                               style: TextStyle(
                                   color: Color(0xff2A2A2A), fontSize: 16),
                             ),
@@ -173,14 +187,47 @@ class Person extends StatelessWidget {
                         ],
                       ),
                     ),
-                    onTap: (){
+                    onTap: () {
                       print("点击了cell:$index");
                     },
                   );
                 }),
+          ),
+          //底部按钮
+          Container(
+            width: width - 32,
+            height: 48,
+            color: const Color(0xFFF4F5F7),
+            child: FlatButton(
+              color: Color(0xFF1F3ABB),
+              highlightColor: Colors.blue[700],
+              colorBrightness: Brightness.dark,
+              splashColor: Colors.grey,
+              child: Text(
+                "新建BP项目",
+                style: TextStyle(
+                    fontSize: 14,
+                    fontWeight: FontWeight.w600),
+              ),
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(6.0)),
+              onPressed: () {},
+            ),
           )
         ],
       ),
     );
+  }
+
+  void _retrieveData() {
+    Future.delayed(Duration(seconds: 1)).then((e) {
+      setState(() {
+        //重新构建列表
+        _words.insertAll(
+            _words.length,
+            //每次生成20个单词
+            generateWordPairs().take(20).map((e) => e.asPascalCase).toList());
+      });
+    });
   }
 }

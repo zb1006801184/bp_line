@@ -28,7 +28,9 @@ class Home extends StatelessWidget {
           ListTile(title: Text("bp_on_line"), onTap: () {
             Navigator.pushNamed(context, "/Person");
           }),
-          ListTile(title: Text("ListView"), onTap: () {}),
+          ListTile(title: Text("无线加载"), onTap: () {
+            Navigator.pushNamed(context, "/TestList");
+          }),
         ],
       ),
     );
