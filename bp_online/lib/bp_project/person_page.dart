@@ -3,6 +3,8 @@ import 'dart:ui';
 import 'package:flutter/services.dart';
 import 'package:english_words/english_words.dart'; //随机生成单纯的库
 import 'ui/person_item.dart';
+import 'package:bp_online/page_index.dart';
+
 class Person extends StatefulWidget {
   @override
   _PersonState createState() => _PersonState();
@@ -128,9 +130,8 @@ class _PersonState extends State<Person> {
                 itemCount: _words.length,
                 itemExtent: 128.0,
                 itemBuilder: (BuildContext context, int index) {
-                  return  PersonItem(_words, index, ()=>{
-                    print("$index"+"cell")
-                  });
+                  return PersonItem(
+                      _words, index, () => {print("$index" + "cell")});
                 }),
           ),
           //底部按钮
@@ -145,9 +146,7 @@ class _PersonState extends State<Person> {
               splashColor: Colors.grey,
               child: Text(
                 "新建BP项目",
-                style: TextStyle(
-                    fontSize: 14,
-                    fontWeight: FontWeight.w600),
+                style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600),
               ),
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(6.0)),

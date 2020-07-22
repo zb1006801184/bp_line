@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'routes.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/rendering.dart' show debugPaintSizeEnabled;
+import 'package:bp_online/page_index.dart';
 
-void main() {
-    debugPaintSizeEnabled = false;      //打开视觉调试开关
-  runApp(MyApp());
+void main()  async {
+  debugPaintSizeEnabled = false; //打开视觉调试开关
+      runApp(MyApp());
+
 }
 
 class MyApp extends StatelessWidget {
@@ -19,3 +21,4 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
