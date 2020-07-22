@@ -69,7 +69,6 @@ class HttpUtils {
             ..addAll({
               "version": "1.0.0",
               // 可以把token等放到这儿
-              "content-type":"application/x-www-form-urlencoded"
             });
 
           debugPrint("headers = ${options.headers}");
@@ -191,8 +190,6 @@ class HttpUtils {
       response = await Dio(
         BaseOptions(
             baseUrl: baseUrl, connectTimeout: 15000, receiveTimeout: 15000,
-                  headers: {"Content-Type": "application/x-www-form-urlencoded","Authorization":"Basic YXBwOmFwcA=="},
-
             ),
 
       ).post(
