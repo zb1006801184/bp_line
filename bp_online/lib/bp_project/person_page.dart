@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'dart:ui';
 import 'package:flutter/services.dart';
 import 'package:english_words/english_words.dart'; //随机生成单纯的库
-
+import 'ui/person_item.dart';
 class Person extends StatefulWidget {
   @override
   _PersonState createState() => _PersonState();
@@ -128,69 +128,9 @@ class _PersonState extends State<Person> {
                 itemCount: _words.length,
                 itemExtent: 128.0,
                 itemBuilder: (BuildContext context, int index) {
-                  return InkWell(
-                    child: Container(
-                      margin: EdgeInsets.only(left: 16, right: 16, bottom: 16),
-                      height: 112,
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(6.0),
-                        ),
-                      ),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: <Widget>[
-                          Container(
-                            margin:
-                                EdgeInsets.only(left: 12, top: 16, right: 12),
-                            child: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: <Widget>[
-                                  Container(
-                                    child: Text(
-                                      "项目号",
-                                      style: TextStyle(
-                                          color: Color(0xff2A2A2A),
-                                          fontSize: 16),
-                                    ),
-                                  ),
-                                  Container(
-                                    child: Text(
-                                      "新消息（1）",
-                                      style: TextStyle(
-                                          color: Color(0xFFFF505D),
-                                          fontSize: 14,
-                                          fontWeight: FontWeight.w600),
-                                    ),
-                                  ),
-                                ]),
-                          ),
-                          Container(
-                            margin: EdgeInsets.only(left: 12),
-                            child: Text(
-                              "项目名称：" + _words[index],
-                              style: TextStyle(
-                                  color: Color(0xff2A2A2A), fontSize: 16),
-                            ),
-                          ),
-                          Container(
-                            margin: EdgeInsets.only(left: 12, bottom: 16),
-                            child: Text(
-                              "提交时间",
-                              style: TextStyle(
-                                  color: Color(0xff2A2A2A), fontSize: 16),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    onTap: () {
-                      print("点击了cell:$index");
-                    },
-                  );
+                  return  PersonItem(_words, index, ()=>{
+                    print("$index"+"cell")
+                  });
                 }),
           ),
           //底部按钮

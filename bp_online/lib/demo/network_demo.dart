@@ -1,7 +1,14 @@
 import 'dart:io';
+import 'package:bp_online/page_index.dart';
 import 'package:flutter/material.dart';
 import 'dart:convert';
 import 'package:dio/dio.dart';
+
+import 'package:bp_online/bp_project/network/http_utils.dart';
+
+import 'package:bp_online/bp_project/network/api_url.dart';
+import 'package:dio/dio.dart';
+import 'dart:convert';
 
 class NetWorkDemo extends StatefulWidget {
   NetWorkDemo({Key key}) : super(key: key);
@@ -42,6 +49,7 @@ class _NetWorkDemoState extends State<NetWorkDemo> {
       _ipAddress = result;
     });
   }
+
   //简单的post请求
   void _getHttp() async {
     String result;
@@ -59,6 +67,28 @@ class _NetWorkDemoState extends State<NetWorkDemo> {
     });
   }
 
+  void _getLogin() async {
+    // Response response = await HttpUtils(headers: {"Authorization":"Basic YXBwOmFwcA==","content-type":"application/x-www-form-urlencoded"}).request(ApiUrl.LOGIN,
+    //     data: {'mobile': "15070925726", 'verification_code': "1234"}, method: HttpUtils.POST);
+    Response response = await ApiService.login("15070925726", "1234");
+    print("object:"+ "$response");
+    // Response response;
+    // Dio dio = Dio();
+    // BaseOptions options = BaseOptions(
+    //   baseUrl: ApiUrl.BASE_URL,
+    //   method: "post",
+    //   headers: {"Authorization":"Basic YXBwOmFwcA==","content-type":"application/x-www-form-urlencoded"},
+    // );
+    // dio.options = options;
+    // FormData formData = FormData.fromMap({
+    //   "mobile": "15070925726",
+    //   "verification_code": "1234",
+    // });
+    // response = await dio.post("/$ApiUrl.LOGIN", data: formData);
+
+    // print("zz:{$response}");
+  }
+
   @override
   Widget build(BuildContext context) {
     var spacer = new SizedBox(height: 32.0);
@@ -72,7 +102,7 @@ class _NetWorkDemoState extends State<NetWorkDemo> {
             new Text('$_ipAddress.'),
             spacer,
             new RaisedButton(
-              onPressed: _getHttp,
+              onPressed: _getLogin,
               child: new Text('Get IP address'),
             ),
           ],
