@@ -4,7 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter/rendering.dart' show debugPaintSizeEnabled;
 
 void main() {
-    debugPaintSizeEnabled = false;      //打开视觉调试开关
+    debugPaintSizeEnabled = true;      //打开视觉调试开关
   runApp(MyApp());
 }
 
@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       title: 'Navigation',
       initialRoute: '/',
       onGenerateRoute: onGenerateRoute,
-      debugShowCheckedModeBanner: false,
+      debugShowCheckedModeBanner: false, //debug标识是否打开
     );
   }
 }
