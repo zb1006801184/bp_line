@@ -5,3 +5,7 @@ export 'package:bp_online/bp_project/unitls/data_name_unitls.dart';
 export 'package:shared_preferences/shared_preferences.dart';
 export 'dart:async';
 export 'bp_project/unitls/login_unitls.dart';
+export 'package:fluttertoast/fluttertoast.dart';
+export 'package:flutter/material.dart';
+export 'package:bp_online/page/home.dart';
+export 'package:bp_online/bp_project/unitls/Global.dart';

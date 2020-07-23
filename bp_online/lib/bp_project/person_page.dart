@@ -131,7 +131,18 @@ class _PersonState extends State<Person> {
                 itemExtent: 128.0,
                 itemBuilder: (BuildContext context, int index) {
                   return PersonItem(
-                      _words, index, () => {print("$index" + "cell")});
+                      _words,
+                      index,
+                      () => {
+                            Fluttertoast.showToast(
+                                msg: "点击了第" + "  $index" + "  cell",
+                                toastLength: Toast.LENGTH_SHORT,
+                                gravity: ToastGravity.CENTER,
+                                timeInSecForIosWeb: 1,
+                                backgroundColor: Colors.red,
+                                textColor: Colors.white,
+                                fontSize: 16.0),
+                          });
                 }),
           ),
           //底部按钮

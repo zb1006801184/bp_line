@@ -9,21 +9,16 @@ import 'package:bp_online/page_index.dart';
 import 'dart:async';
 
 class Home extends StatelessWidget {
-    // Future<SharedPreferences> _prefs = SharedPreferences.getInstance();
-   bool login = false;
-    // Future<void> requestLoginSate() async {
-    //     final SharedPreferences prefs = await _prefs;
-    //   login = await LoginUnitls.getState();
-            
-    // }
-
+  bool login = false;
 
   @override
   Widget build(BuildContext context) {
+    //已登录
     return Scaffold(
       appBar: AppBar(
-        title: login? Text("首页"):Text("首页11"),
+        title:  Text("首页"),
         brightness: Brightness.light,
+        leading: Text(''),
       ),
       body: ListView(
         children: <Widget>[
@@ -58,8 +53,14 @@ class Home extends StatelessWidget {
               onTap: () {
                 Navigator.pushNamed(context, "/NetWork");
               }),
+              ListTile(
+              title: Text("login"),
+              onTap: () {
+                Navigator.pushNamed(context, "/Login");
+              }),
         ],
       ),
     );
   }
 }
+

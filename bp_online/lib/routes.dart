@@ -9,7 +9,7 @@ import 'demo/text_demo.dart';
 import 'demo/layout_view.dart';
 import 'bp_project/person_page.dart';
 import 'demo/network_demo.dart';
-
+import 'bp_project/login/login_page.dart';
 final routes = {
   '/': (context) => Home(),
   '/dis': (context) => Dis(),
@@ -20,6 +20,8 @@ final routes = {
   '/Person': (context) => Person(),
   '/TestList': (context) => InfiniteListView(),
   '/NetWork': (context) => NetWorkDemo(),
+  '/Login': (context) => LoginPageView(),
+
 };
 
 var onGenerateRoute = (RouteSettings settings) {

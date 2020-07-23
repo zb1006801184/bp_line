@@ -72,21 +72,7 @@ class _NetWorkDemoState extends State<NetWorkDemo> {
     //     data: {'mobile': "15070925726", 'verification_code': "1234"}, method: HttpUtils.POST);
     Response response = await ApiService.login("15070925726", "1234");
     print("object:"+ "$response");
-    // Response response;
-    // Dio dio = Dio();
-    // BaseOptions options = BaseOptions(
-    //   baseUrl: ApiUrl.BASE_URL,
-    //   method: "post",
-    //   headers: {"Authorization":"Basic YXBwOmFwcA==","content-type":"application/x-www-form-urlencoded"},
-    // );
-    // dio.options = options;
-    // FormData formData = FormData.fromMap({
-    //   "mobile": "15070925726",
-    //   "verification_code": "1234",
-    // });
-    // response = await dio.post("/$ApiUrl.LOGIN", data: formData);
-
-    // print("zz:{$response}");
+    
   }
 
   @override
