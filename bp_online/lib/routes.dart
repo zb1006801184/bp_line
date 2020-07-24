@@ -10,6 +10,7 @@ import 'demo/layout_view.dart';
 import 'bp_project/person_page.dart';
 import 'demo/network_demo.dart';
 import 'bp_project/login/login_page.dart';
+import 'bp_project/class/title_page.dart';
 final routes = {
   '/': (context) => Home(),
   '/dis': (context) => Dis(),
@@ -21,6 +22,8 @@ final routes = {
   '/TestList': (context) => InfiniteListView(),
   '/NetWork': (context) => NetWorkDemo(),
   '/Login': (context) => LoginPageView(),
+    '/TitlePage': (context) => TitlePage(),
+
 
 };
 

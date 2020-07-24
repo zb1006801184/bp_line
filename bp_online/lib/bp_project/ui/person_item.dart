@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 
+//个人中心cell
 class PersonItem extends StatelessWidget {
 final List data;
 final int index;
-  final VoidCallback onTop;
+final VoidCallback onTop;
 
 PersonItem(
     this.data, 

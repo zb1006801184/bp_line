@@ -9,3 +9,5 @@ export 'package:fluttertoast/fluttertoast.dart';
 export 'package:flutter/material.dart';
 export 'package:bp_online/page/home.dart';
 export 'package:bp_online/bp_project/unitls/Global.dart';
+export 'bp_project/ui/one_line_input.dart';
+export 'bp_project/ui/commit_bottom_button.dart';

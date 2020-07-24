@@ -22,6 +22,11 @@ class _PersonState extends State<Person> {
   final width = window.physicalSize.width / 2;
   final height = window.physicalSize.height / 2;
 
+//新建bp
+  _creatProject(context) {
+    Navigator.pushNamed(context, "/TitlePage");
+  }
+
   @override
   Widget build(BuildContext context) {
     SystemUiOverlayStyle systemUiOverlayStyle =
@@ -161,7 +166,9 @@ class _PersonState extends State<Person> {
               ),
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(6.0)),
-              onPressed: () {},
+              onPressed: () {
+                _creatProject(context);
+              },
             ),
           )
         ],
