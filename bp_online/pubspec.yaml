@@ -37,6 +37,12 @@ dependencies:
   # toast
   fluttertoast: ^7.0.1
 
+  #city picker
+  city_pickers: ^0.0.1
+  
+  #date  picker
+  flutter_cupertino_date_picker: ^1.0.26+2
+
 
 dev_dependencies:
   flutter_test:

@@ -22,6 +22,11 @@ class _PersonState extends State<Person> {
   final width = window.physicalSize.width / 2;
   final height = window.physicalSize.height / 2;
 
+//新建bp
+  _creatProject(context) {
+    Navigator.pushNamed(context, "/TitlePage");
+  }
+
   @override
   Widget build(BuildContext context) {
     SystemUiOverlayStyle systemUiOverlayStyle =
@@ -161,7 +166,9 @@ class _PersonState extends State<Person> {
               ),
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(6.0)),
-              onPressed: () {},
+              onPressed: () {
+                _creatProject(context);
+              },
             ),
           )
         ],
@@ -170,7 +177,7 @@ class _PersonState extends State<Person> {
   }
 
   void _retrieveData() {
-    Future.delayed(Duration(seconds: 1)).then((e) {
+    Future.delayed(Duration(seconds: 0)).then((e) {
       setState(() {
         //重新构建列表
         _words.insertAll(
