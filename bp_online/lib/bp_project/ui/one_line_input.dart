@@ -4,10 +4,12 @@ import 'package:bp_online/page_index.dart';
 class OneLineInput extends StatelessWidget {
   final String titles;
   final String placeholderTitle;
+  final TextEditingController controller;
   OneLineInput({
     Key key,
     this.titles,
     this.placeholderTitle,
+    this.controller,
   }) : super(key: key);
 
   @override
@@ -30,21 +32,23 @@ class OneLineInput extends StatelessWidget {
             padding: EdgeInsets.only(left: 8),
             width: Global.ksWidth - 32,
             height: 48,
-            // color: Colors.white,
             child: TextField(
+              maxLines: 1,
+              controller: controller,
               style: TextStyle(fontSize: 18),
-              keyboardType: TextInputType.number,
               showCursor: true,
+              onSubmitted: (String text) {
+                FocusScope.of(context).requestFocus(FocusNode());
+              },
               decoration: InputDecoration(
                   border: InputBorder.none,
-                  contentPadding: EdgeInsets.only(top: 1),
+                  contentPadding: EdgeInsets.only(right: 8),
                   hintStyle: TextStyle(color: Color(0xFFAEAFB7), fontSize: 18),
                   hintText: placeholderTitle),
             ),
             decoration: new BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.all(Radius.circular(4.0)),
-              // border: new Border.all(width: 1, color: Colors.red),
             ),
           )
         ],
@@ -56,10 +60,12 @@ class OneLineInput extends StatelessWidget {
 class MuchLineInput extends StatelessWidget {
   final String titles;
   final String placeholderTitle;
+  final TextEditingController controller;
 
   MuchLineInput({
     Key key,
     this.titles,
+    this.controller,
     this.placeholderTitle,
   }) : super(key: key);
 
@@ -83,15 +89,14 @@ class MuchLineInput extends StatelessWidget {
             padding: EdgeInsets.only(left: 8),
             width: Global.ksWidth - 32,
             height: 120,
-            // color: Colors.white,
             child: TextField(
+              controller: controller,
               style: TextStyle(fontSize: 18),
-              keyboardType: TextInputType.number,
               showCursor: true,
               maxLines: 3000,
               decoration: InputDecoration(
                   border: InputBorder.none,
-                  contentPadding: EdgeInsets.only(top: 1),
+                  contentPadding: EdgeInsets.only(top: 8),
                   hintStyle: TextStyle(color: Color(0xFFAEAFB7), fontSize: 18),
                   hintText: placeholderTitle),
             ),
@@ -110,10 +115,15 @@ class MuchLineInput extends StatelessWidget {
 class OneLineSelect extends StatelessWidget {
   final String titles;
   final String placeholderTitle;
+  final TextEditingController controller;
+  final VoidCallback onTop;
+
   OneLineSelect({
     Key key,
     this.titles,
     this.placeholderTitle,
+    this.controller,
+    this.onTop,
   }) : super(key: key);
 
   @override
@@ -143,6 +153,7 @@ class OneLineSelect extends StatelessWidget {
                     height: 48,
                     width: Global.ksWidth - 32 - 30,
                     child: TextField(
+                      controller: controller,
                       style: TextStyle(fontSize: 18),
                       keyboardType: TextInputType.number,
                       showCursor: true,
@@ -155,10 +166,7 @@ class OneLineSelect extends StatelessWidget {
                           hintText: placeholderTitle),
                     ),
                   ),
-                  onTap: () {
-                    FocusScope.of(context).requestFocus(FocusNode());
-                    print("选择$titles");
-                  },
+                  onTap: onTop,
                 ),
                 Image(
                   image: AssetImage("images/list_icon_goto_gray.png"),

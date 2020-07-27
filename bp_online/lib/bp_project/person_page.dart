@@ -177,7 +177,7 @@ class _PersonState extends State<Person> {
   }
 
   void _retrieveData() {
-    Future.delayed(Duration(seconds: 1)).then((e) {
+    Future.delayed(Duration(seconds: 0)).then((e) {
       setState(() {
         //重新构建列表
         _words.insertAll(

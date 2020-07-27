@@ -34,7 +34,7 @@ class CommitBottomButton extends StatelessWidget {
               ),
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(6.0)),
-              onPressed: () {},
+              onPressed: onTop,
             ),
           )
         ],

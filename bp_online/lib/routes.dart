@@ -11,6 +11,7 @@ import 'bp_project/person_page.dart';
 import 'demo/network_demo.dart';
 import 'bp_project/login/login_page.dart';
 import 'bp_project/class/title_page.dart';
+import 'bp_project/class/title_page_result.dart';
 final routes = {
   '/': (context) => Home(),
   '/dis': (context) => Dis(),
@@ -22,9 +23,8 @@ final routes = {
   '/TestList': (context) => InfiniteListView(),
   '/NetWork': (context) => NetWorkDemo(),
   '/Login': (context) => LoginPageView(),
-    '/TitlePage': (context) => TitlePage(),
-
-
+  '/TitlePage': (context) => TitlePage(),
+  '/TitlePageResult': (context) => TitlePageResult(),
 };
 
 var onGenerateRoute = (RouteSettings settings) {
