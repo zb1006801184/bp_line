@@ -1,3 +1,4 @@
+import 'package:bp_online/bp_project/models/from_list_model.dart';
 import 'package:flutter/material.dart';
 import 'dart:ui';
 import 'package:flutter/services.dart';
@@ -11,12 +12,13 @@ class Person extends StatefulWidget {
 }
 
 class _PersonState extends State<Person> {
-  var _words = <String>[];
+  var _words = <FormListModel>[];
 
   @override
   void initState() {
     super.initState();
-    _retrieveData();
+    // _retrieveData();
+    _requestAllData();
   }
 
   final width = window.physicalSize.width / 2;
@@ -175,16 +177,10 @@ class _PersonState extends State<Person> {
       ),
     );
   }
-
-  void _retrieveData() {
-    Future.delayed(Duration(seconds: 0)).then((e) {
-      setState(() {
-        //重新构建列表
-        _words.insertAll(
-            _words.length,
-            //每次生成20个单词
-            generateWordPairs().take(20).map((e) => e.asPascalCase).toList());
-      });
-    });
+  void _requestAllData() async{
+   List<FormListModel> respone = await ApiService.getAllFromData();
+   setState(() {
+     _words = respone;
+   });
   }
 }

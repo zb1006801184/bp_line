@@ -18,7 +18,7 @@ import 'package:bp_online/page_index.dart';
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   Global.init().then((e) {
-    debugPaintSizeEnabled = true;  //调试模式
+    debugPaintSizeEnabled = false;  //调试模式
     if (Global.loginState == null || Global.loginState == false) {
       runApp(Login());
     } else {

@@ -1,14 +1,17 @@
 //登录
+import 'dart:convert';
+
 import 'package:bp_online/page_index.dart';
-import 'package:dio/dio.dart';
 import 'dart:ui';
 
 class LoginPageView extends StatelessWidget {
   _getLogin(context) async {
-    // Response response = await ApiService.login("15070925726", "1234");
-    // print("object:"+ "$response");
+    LoginPerson response = await ApiService.login("15070925726", "1234");
     SharedPreferences prefs = await SharedPreferences.getInstance();
     prefs.setBool(DataName.LOGINSTATE, true);
+    var data =  response.toJson().toString();
+    prefs.setString(DataName.PERSONINFO, data);
+    Global.profile = response;
     Navigator.pushNamed(context, "/");
   }
 

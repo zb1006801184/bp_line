@@ -70,7 +70,7 @@ class _NetWorkDemoState extends State<NetWorkDemo> {
   void _getLogin() async {
     // Response response = await HttpUtils(headers: {"Authorization":"Basic YXBwOmFwcA==","content-type":"application/x-www-form-urlencoded"}).request(ApiUrl.LOGIN,
     //     data: {'mobile': "15070925726", 'verification_code': "1234"}, method: HttpUtils.POST);
-    Response response = await ApiService.login("15070925726", "1234");
+    LoginPerson response = await ApiService.login("15070925726", "1234");
     print("object:"+ "$response");
     
   }

@@ -1,5 +1,6 @@
 import 'package:bp_online/page_index.dart';
 import 'dart:ui';
+import 'dart:convert';
 const _themes = <MaterialColor>[
   Colors.blue,
   Colors.cyan,
@@ -10,7 +11,7 @@ const _themes = <MaterialColor>[
 
 class Global {
   static SharedPreferences _prefs;
-  // static Profile profile = Profile();
+  static LoginPerson profile = LoginPerson();
   // 网络缓存对象
   // static NetCache netCache = NetCache();
 
@@ -29,13 +30,14 @@ class Global {
     } else {
       print("未登录");
     }
-    // var _profile = _prefs.getString("profile");
-    // if (_profile != null) {
-    //   try {
-    //     profile = Profile.fromJson(jsonDecode(_profile));
-    //   } catch (e) {
-    //     print(e);
-    //   }
+    var _profile = _prefs.getString(DataName.PERSONINFO);
+    if (_profile != null) {
+      try {
+        profile = LoginPerson.fromJson(jsonDecode(_profile));
+      } catch (e) {
+        print(e);
+      }
+      }
   }
 
   // 如果没有缓存策略，设置默认缓存策略

@@ -1,8 +1,10 @@
+import 'package:bp_online/bp_project/models/form_data_model.dart';
+import 'package:bp_online/bp_project/models/from_list_model.dart';
 import 'package:flutter/material.dart';
 
 //个人中心cell
 class PersonItem extends StatelessWidget {
-final List data;
+final List<FormListModel> data;
 final int index;
 final VoidCallback onTop;
 
@@ -16,6 +18,7 @@ PersonItem(
 
 @override
   Widget build(BuildContext context) {
+    FormListModel model = data[index];
     return InkWell(
                     child: Container(
                       margin: EdgeInsets.only(left: 16, right: 16, bottom: 16),
@@ -39,7 +42,7 @@ PersonItem(
                                 children: <Widget>[
                                   Container(
                                     child: Text(
-                                      "项目号",
+                                      "项目号" + model.bpNum,
                                       style: TextStyle(
                                           color: Color(0xff2A2A2A),
                                           fontSize: 16),
@@ -59,7 +62,7 @@ PersonItem(
                           Container(
                             margin: EdgeInsets.only(left: 12),
                             child: Text(
-                              "项目名称：" + data[index],
+                              "项目名称：" + model.projectName,
                               style: TextStyle(
                                   color: Color(0xff2A2A2A), fontSize: 16),
                             ),
@@ -67,7 +70,7 @@ PersonItem(
                           Container(
                             margin: EdgeInsets.only(left: 12, bottom: 16),
                             child: Text(
-                              "提交时间",
+                              "提交时间" + model.createdTime,
                               style: TextStyle(
                                   color: Color(0xff2A2A2A), fontSize: 16),
                             ),
