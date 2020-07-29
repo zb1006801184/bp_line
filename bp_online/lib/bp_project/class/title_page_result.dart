@@ -3,10 +3,11 @@ import 'package:bp_online/bp_project/models/form_data_model.dart';
 import 'package:bp_online/page_index.dart';
 
 class TitlePageResult extends StatelessWidget {
+  FormDataModel _data;
   @override
   Widget build(BuildContext context) {
     FormDataModel model = ModalRoute.of(context).settings.arguments;
-
+    _data = model;
     return Scaffold(
       body: Container(
         height: Global.ksHeight,
@@ -124,13 +125,13 @@ class TitlePageResult extends StatelessWidget {
                       children: <Widget>[
                         Container(
                           margin: EdgeInsets.only(top: 31.5),
-                          child:
-                              Text("汇报人：${model.username}", style: TextStyle(fontSize: 16)),
+                          child: Text("汇报人：${model.username}",
+                              style: TextStyle(fontSize: 16)),
                         ),
                         Container(
                           margin: EdgeInsets.only(top: 16),
-                          child:
-                              Text("公司名称：${model.companyName}", style: TextStyle(fontSize: 16)),
+                          child: Text("公司名称：${model.companyName}",
+                              style: TextStyle(fontSize: 16)),
                         ),
                         Container(
                           margin: EdgeInsets.only(top: 16),
@@ -147,12 +148,19 @@ class TitlePageResult extends StatelessWidget {
               bottom: 0,
               child: Container(
                 width: Global.ksWidth,
-                child: ResultBottomButton("修改", "下一页", () {}, () {}),
+                child: ResultBottomButton("修改", "下一页", () {
+                  _editData(context);
+                }, () {}),
               ),
             )
           ],
         ),
       ),
     );
+  }
+
+  //修改
+  _editData(context) {
+    Navigator.of(context).pushNamed("/TitlePage", arguments: _data);
   }
 }

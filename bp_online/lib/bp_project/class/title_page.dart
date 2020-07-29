@@ -28,6 +28,8 @@ class _TitlePageState extends State<TitlePage> {
   List typeList = ["模式创新", "技术创新", "原创版权"];
   //时间选择器
   void _showDatePicker(BuildContext context) {
+    
+
     DatePicker.showDatePicker(
       context,
       locale: DateTimePickerLocale.zh_cn,
@@ -62,6 +64,18 @@ class _TitlePageState extends State<TitlePage> {
 
   @override
   Widget build(BuildContext context) {
+    FormDataModel model = ModalRoute.of(context).settings.arguments;
+    if (model != null) {
+      controllerName.text = model.projectName;
+      controllerDes.text = model.projectDescribe;
+      controllerIndustry.text = model.industry;
+      controllerType.text = model.projectType;
+      controllerCity.text = model.projectCity;
+      controllerUserName.text = model.username;
+      controllerCompany.text = model.companyName;
+      controllerDate.text = model.reportTime;
+    }
+
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -142,6 +156,7 @@ class _TitlePageState extends State<TitlePage> {
     );
   }
 
+//提交
   _savaFormData(context) async {
     Map<String, dynamic> params = {};
     params["pageNo"] = "1";
@@ -156,7 +171,33 @@ class _TitlePageState extends State<TitlePage> {
     params["skinBackground"] = "0";
     params["title"] = "封面";
     params["id"] = "13";
+    if (!_checkParams()) {
+      return;
+    }
     FormDataModel model = await ApiService.subCommitAllFromData(params);
     Navigator.of(context).pushNamed("/TitlePageResult", arguments: model);
+  }
+
+//校验数据
+  bool _checkParams() {
+    if (controllerName.text.length < 1 ||
+        controllerDes.text.length < 1 ||
+        controllerIndustry.text.length < 1 ||
+        controllerType.text.length < 1 ||
+        controllerCity.text.length < 1 ||
+        controllerUserName.text.length < 1 ||
+        controllerCompany.text.length < 1 ||
+        controllerDate.text.length < 1) {
+      Fluttertoast.showToast(
+          msg: "有信息尚未完善！",
+          toastLength: Toast.LENGTH_SHORT,
+          gravity: ToastGravity.CENTER,
+          timeInSecForIosWeb: 1,
+          backgroundColor: Colors.black,
+          textColor: Colors.white,
+          fontSize: 14.0);
+      return false;
+    }
+    return true;
   }
 }
