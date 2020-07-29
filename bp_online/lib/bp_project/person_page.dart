@@ -179,6 +179,9 @@ class _PersonState extends State<Person> {
   }
   void _requestAllData() async{
    List<FormListModel> respone = await ApiService.getAllFromData();
+   if (respone == null) {
+     return;
+   }
    setState(() {
      _words = respone;
    });

@@ -4,17 +4,6 @@ import 'package:flutter/services.dart';
 import 'package:flutter/rendering.dart' show debugPaintSizeEnabled;
 import 'package:bp_online/page_index.dart';
 
-// void main() {
-//   debugPaintSizeEnabled = false; //打开视觉调试开关
-//   runApp(MyApp());
-
-// }
-// void main() => Global.init().then((e) => {
-//     WidgetsFlutterBinding.ensureInitialized(),
-//       debugPaintSizeEnabled = false, //打开视觉调试开关
-//     }).then((e) => {
-//             runApp(MyApp()),
-//     });
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   Global.init().then((e) {
@@ -49,7 +38,7 @@ class Login extends StatelessWidget {
       initialRoute: '/Login',
       routes: routes,
       onGenerateRoute: onGenerateRoute,
-      debugShowCheckedModeBanner: true, 
+      debugShowCheckedModeBanner: !Global.isRelease, 
     );
   }
 }

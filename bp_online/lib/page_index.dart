@@ -14,3 +14,4 @@ export 'bp_project/ui/commit_bottom_button.dart';
 export 'bp_project/ui/result_bottom_button.dart';
 export 'bp_project/models/login_person_model.dart';
 export 'bp_project/ui/single_line_picker.dart';
+export 'bp_project/ui/toast_view.dart';

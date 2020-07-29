@@ -175,7 +175,9 @@ class _TitlePageState extends State<TitlePage> {
       return;
     }
     FormDataModel model = await ApiService.subCommitAllFromData(params);
+    if (model != null) {
     Navigator.of(context).pushNamed("/TitlePageResult", arguments: model);
+    }
   }
 
 //校验数据

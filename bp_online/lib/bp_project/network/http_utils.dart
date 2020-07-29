@@ -143,8 +143,14 @@ class HttpUtils {
       }, cancelToken: cancelToken);
     } on DioError catch (e) {
       // formatError(e);
-
+    if (e.response == null) {
+      ToastView(title: "请求超时，请稍后再试！",).showMessage();
+    }else {
       response = e.response;
+      String messageStr = response.data["res_msg"];
+      ToastView(title: messageStr,).showMessage();
+    }
+      response = null;
     }
 
     return response;
