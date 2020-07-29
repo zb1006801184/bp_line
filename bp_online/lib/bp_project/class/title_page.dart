@@ -2,11 +2,14 @@
 
 // import 'dart:js';
 
+import 'package:bp_online/bp_project/class/title_page_result.dart';
+import 'package:bp_online/bp_project/models/form_data_model.dart';
 import 'package:bp_online/page_index.dart';
 import 'dart:ui';
 import 'package:flutter/cupertino.dart';
 import 'package:city_pickers/city_pickers.dart';
 import 'package:flutter_cupertino_date_picker/flutter_cupertino_date_picker.dart';
+
 class TitlePage extends StatefulWidget {
   @override
   _TitlePageState createState() => _TitlePageState();
@@ -20,6 +23,7 @@ class _TitlePageState extends State<TitlePage> {
   final controllerType = TextEditingController(); //项目类别
   final controllerCity = TextEditingController(); //项目所在城市
   final controllerDate = TextEditingController(); //项目日期
+  final controllerUserName = TextEditingController(); //  项目汇报人
   List industryList = ["互联网/IT/电子/通信", "广告/传媒/文化/体育", "金融、教育培训"];
   List typeList = ["模式创新", "技术创新", "原创版权"];
   //时间选择器
@@ -28,12 +32,12 @@ class _TitlePageState extends State<TitlePage> {
       context,
       locale: DateTimePickerLocale.zh_cn,
       dateFormat: "yyyy-MM-dd",
-      
-      onConfirm: (dateTime,index){
-        controllerDate.text = dateTime.toString().substring(0,11);
+      onConfirm: (dateTime, index) {
+        controllerDate.text = dateTime.toString().substring(0, 11);
       },
-      );
+    );
   }
+
   //城市选择器
   void _showCitySelect(BuildContext context) async {
     Result result =
@@ -47,30 +51,13 @@ class _TitlePageState extends State<TitlePage> {
   void _showCupertinoPicker(
       BuildContext cxt, List listData, TextEditingController controller) {
     FocusScope.of(context).requestFocus(FocusNode());
-    final picker = CupertinoPicker(
-      itemExtent: 40,
-      onSelectedItemChanged: (position) {
-        controller.text = listData[position];
+    SingleLinePicker(
+      superContext: cxt,
+      listData: listData,
+      sureOnTap: (item) {
+        controller.text = item;
       },
-      children: buildGrid(listData),
-      backgroundColor: Colors.white,
-    );
-
-    showCupertinoModalPopup(
-        context: cxt,
-        builder: (cxt) {
-          return Container(height: 200, child: picker);
-        });
-  }
-
-  List buildGrid(List listData) {
-    List<Widget> tiles = [];
-    for (var item in listData) {
-      tiles.add(Center(
-        child: Text(item),
-      ));
-    }
-    return tiles;
+    ).showPickerView();
   }
 
   @override
@@ -84,6 +71,7 @@ class _TitlePageState extends State<TitlePage> {
         leading: Text(''),
         backgroundColor: Color(0xFFf4f5f7),
         elevation: 0, //阴影辐射范围
+        brightness: Brightness.light,
       ),
       body: InkWell(
         child: ListView(
@@ -124,6 +112,11 @@ class _TitlePageState extends State<TitlePage> {
               },
             ),
             OneLineInput(
+              titles: "汇报人",
+              placeholderTitle: "请填写项目汇报人",
+              controller: controllerUserName,
+            ),
+            OneLineInput(
               titles: "公司名称",
               placeholderTitle: "请填写公司名称",
               controller: controllerCompany,
@@ -138,7 +131,7 @@ class _TitlePageState extends State<TitlePage> {
               },
             ),
             CommitBottomButton("提交", () {
-              Navigator.pushNamed(context, "/TitlePageResult");
+              _savaFormData(context);
             }),
           ],
         ),
@@ -147,5 +140,23 @@ class _TitlePageState extends State<TitlePage> {
         },
       ),
     );
+  }
+
+  _savaFormData(context) async {
+    Map<String, dynamic> params = {};
+    params["pageNo"] = "1";
+    params["projectName"] = controllerName.text;
+    params["projectDescribe"] = controllerDes.text;
+    params["industry"] = controllerIndustry.text;
+    params["projectType"] = controllerType.text;
+    params["projectCity"] = controllerCity.text;
+    params["username"] = controllerUserName.text;
+    params["companyName"] = controllerCompany.text;
+    params["reportTime"] = controllerDate.text;
+    params["skinBackground"] = "0";
+    params["title"] = "封面";
+    params["id"] = "13";
+    FormDataModel model = await ApiService.subCommitAllFromData(params);
+    Navigator.of(context).pushNamed("/TitlePageResult", arguments: model);
   }
 }

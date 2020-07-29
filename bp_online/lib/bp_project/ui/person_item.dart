@@ -19,7 +19,7 @@ PersonItem(
 @override
   Widget build(BuildContext context) {
     FormListModel model = data[index];
-    // String timeStr = model.createdTime 
+    String timeStr = model.createdTime ==null? "" : model.createdTime.substring(0,10);
     return InkWell(
                     child: Container(
                       margin: EdgeInsets.only(left: 16, right: 16, bottom: 16),
@@ -71,7 +71,7 @@ PersonItem(
                           Container(
                             margin: EdgeInsets.only(left: 12, bottom: 16),
                             child: Text(
-                              "提交时间 " + model.createdTime,
+                              "提交时间 " + timeStr,
                               style: TextStyle(
                                   color: Color(0xff2A2A2A), fontSize: 16),
                             ),

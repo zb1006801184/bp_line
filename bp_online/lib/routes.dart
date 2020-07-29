@@ -13,18 +13,18 @@ import 'bp_project/login/login_page.dart';
 import 'bp_project/class/title_page.dart';
 import 'bp_project/class/title_page_result.dart';
 final routes = {
-  '/': (context) => Home(),
-  '/dis': (context) => Dis(),
+  '/': (context,{arguments}) => Home(),
+  '/dis': (context,{arguments}) => Dis(),
   '/test': (context, {arguments}) => Test(),
-  '/listView': (context) => simpleListView(),
-  '/textDemo': (context) => textDemo(),
-  '/LayoutView': (context) => layoutView(),
-  '/Person': (context) => Person(),
-  '/TestList': (context) => InfiniteListView(),
-  '/NetWork': (context) => NetWorkDemo(),
-  '/Login': (context) => LoginPageView(),
-  '/TitlePage': (context) => TitlePage(),
-  '/TitlePageResult': (context) => TitlePageResult(),
+  '/listView': (context,{arguments}) => simpleListView(),
+  '/textDemo': (context,{arguments}) => textDemo(),
+  '/LayoutView': (context,{arguments}) => layoutView(),
+  '/Person': (context,{arguments}) => Person(),
+  '/TestList': (context,{arguments}) => InfiniteListView(),
+  '/NetWork': (context,{arguments}) => NetWorkDemo(),
+  '/Login': (context,{arguments}) => LoginPageView(),
+  '/TitlePage': (context,{arguments}) => TitlePage(),
+  '/TitlePageResult': (context,{arguments}) => TitlePageResult(),
 };
 
 var onGenerateRoute = (RouteSettings settings) {

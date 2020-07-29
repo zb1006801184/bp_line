@@ -9,7 +9,7 @@ class LoginPageView extends StatelessWidget {
     LoginPerson response = await ApiService.login("15070925726", "1234");
     SharedPreferences prefs = await SharedPreferences.getInstance();
     prefs.setBool(DataName.LOGINSTATE, true);
-    var data =  response.toJson().toString();
+    String data = jsonEncode(response.toJson());
     prefs.setString(DataName.PERSONINFO, data);
     Global.profile = response;
     Navigator.pushNamed(context, "/");

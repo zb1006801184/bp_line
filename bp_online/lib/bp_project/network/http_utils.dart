@@ -111,19 +111,19 @@ class HttpUtils {
   Future<Response> request(
     String path, {
     Map<String, dynamic> data,
-    String method: GET,
+    String method,
     CancelToken cancelToken,
   }) async {
-    if (data != null) {
-      /// restful 请求处理
-      /// /gysw/search/hist/:user_id        user_id=27
-      /// 最终生成 url 为     /gysw/search/hist/27
-      data.forEach((key, value) {
-        if (path.indexOf(key) != -1) {
-          path = path.replaceAll(':$key', value.toString());
-        }
-      });
-    }
+    // if (data != null && method == GET) {
+    //   /// restful 请求处理
+    //   /// /gysw/search/hist/:user_id        user_id=27
+    //   /// 最终生成 url 为     /gysw/search/hist/27
+    //   data.forEach((key, value) {
+    //     if (path.indexOf(key) != -1) {
+    //       path = path.replaceAll(':$key', value.toString());
+    //     }
+    //   });
+    // }
 
     Response response;
     try {
@@ -131,7 +131,7 @@ class HttpUtils {
 
           /// 请求路径，如果 `path` 以 "http(s)"开始, 则 `baseURL` 会被忽略； 否则, 将会和baseUrl拼接出完整的的url.
           path,
-          data: data != null ? FormData.fromMap(data) : null,
+          data: data,
           queryParameters: data,
           options: Options(method: method),
           onReceiveProgress: (int count, int total) {

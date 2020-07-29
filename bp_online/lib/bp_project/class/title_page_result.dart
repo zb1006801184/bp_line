@@ -1,9 +1,12 @@
 //封面结果页
+import 'package:bp_online/bp_project/models/form_data_model.dart';
 import 'package:bp_online/page_index.dart';
 
 class TitlePageResult extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    FormDataModel model = ModalRoute.of(context).settings.arguments;
+
     return Scaffold(
       body: Container(
         height: Global.ksHeight,
@@ -27,7 +30,7 @@ class TitlePageResult extends StatelessWidget {
                         top:
                             Global.ksToolbarHeight + Global.ksStateHeight + 16),
                     child: Text(
-                      "解决者地图",
+                      model.projectName,
                       style: TextStyle(
                           color: Color(0xFF1F3ABB),
                           fontSize: 24,
@@ -37,7 +40,7 @@ class TitlePageResult extends StatelessWidget {
                   Container(
                     margin: EdgeInsets.only(top: 32, left: 16, right: 16),
                     child: Text(
-                      "为解决者建立一个展示自己真实能力的平台，用的闲时对接项目。",
+                      model.projectDescribe,
                       style: TextStyle(
                           color: Color(0xFF2A2A2A),
                           fontSize: 16,
@@ -65,7 +68,7 @@ class TitlePageResult extends StatelessWidget {
                               ),
                               Container(
                                 margin: EdgeInsets.only(left: 8),
-                                child: Text("项目所属行业：互联网"),
+                                child: Text("项目所属行业：${model.industry}"),
                               )
                             ],
                           ),
@@ -83,7 +86,7 @@ class TitlePageResult extends StatelessWidget {
                               ),
                               Container(
                                 margin: EdgeInsets.only(left: 8),
-                                child: Text("项目所属行业：互联网"),
+                                child: Text("项目类别：${model.projectType}"),
                               )
                             ],
                           ),
@@ -101,7 +104,7 @@ class TitlePageResult extends StatelessWidget {
                               ),
                               Container(
                                 margin: EdgeInsets.only(left: 8),
-                                child: Text("项目所属行业：互联网"),
+                                child: Text("项目团队所在城市：${model.projectCity}"),
                               )
                             ],
                           ),
@@ -122,16 +125,16 @@ class TitlePageResult extends StatelessWidget {
                         Container(
                           margin: EdgeInsets.only(top: 31.5),
                           child:
-                              Text("汇报人：优尼客", style: TextStyle(fontSize: 16)),
+                              Text("汇报人：${model.username}", style: TextStyle(fontSize: 16)),
                         ),
                         Container(
                           margin: EdgeInsets.only(top: 16),
                           child:
-                              Text("公司名称：谛听", style: TextStyle(fontSize: 16)),
+                              Text("公司名称：${model.companyName}", style: TextStyle(fontSize: 16)),
                         ),
                         Container(
                           margin: EdgeInsets.only(top: 16),
-                          child: Text("日期：2020-06-29",
+                          child: Text("日期：${model.reportTime}",
                               style: TextStyle(fontSize: 16)),
                         ),
                       ],

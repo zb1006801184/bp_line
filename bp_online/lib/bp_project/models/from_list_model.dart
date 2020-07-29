@@ -3,7 +3,7 @@ class FormListModel {
   String bpNum;
   String projectName;
   String createdTime;
-  Null replyNum;
+  int replyNum;
 
   FormListModel(
       {this.id, this.bpNum, this.projectName, this.createdTime, this.replyNum});

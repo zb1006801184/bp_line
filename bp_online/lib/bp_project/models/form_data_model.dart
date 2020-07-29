@@ -23,7 +23,7 @@ class FormDataModel {
   String projectUrl;
   List<String> profitItems;
   String profitModelDescribe;
-  Null profitModelPicture;
+  String profitModelPicture;
   String projectStage;
   String projectStory;
   BpFounder bpFounder;

@@ -1,6 +1,7 @@
 import 'package:bp_online/page_index.dart';
 import 'dart:ui';
 import 'dart:convert';
+
 const _themes = <MaterialColor>[
   Colors.blue,
   Colors.cyan,
@@ -24,8 +25,8 @@ class Global {
   //初始化全局信息，会在APP启动时执行
   static Future init() async {
     _prefs = await SharedPreferences.getInstance();
-     loginState = _prefs.getBool(DataName.LOGINSTATE);
-    if (loginState != null && loginState ==true) {
+    loginState = _prefs.getBool(DataName.LOGINSTATE);
+    if (loginState != null && loginState == true) {
       print("已登录");
     } else {
       print("未登录");
@@ -37,7 +38,7 @@ class Global {
       } catch (e) {
         print(e);
       }
-      }
+    }
   }
 
   // 如果没有缓存策略，设置默认缓存策略
@@ -54,11 +55,10 @@ class Global {
   // static saveProfile() =>
   //     _prefs.setString("profile", jsonEncode(profile.toJson()));
 //设备宽高
- static double ksWidth = window.physicalSize.width / 2;
- static double ksHeight = window.physicalSize.height / 2;
+  static double ksWidth = window.physicalSize.width / 2;
+  static double ksHeight = window.physicalSize.height / 2;
 //导航栏的高度
- static double ksToolbarHeight = kToolbarHeight;
+  static double ksToolbarHeight = kToolbarHeight;
 //状态栏高度
-static double ksStateHeight = MediaQueryData.fromWindow(window).padding.top;
-
+  static double ksStateHeight = MediaQueryData.fromWindow(window).padding.top;
 }

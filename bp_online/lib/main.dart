@@ -24,6 +24,7 @@ void main() {
     } else {
       runApp(MyApp());
     }
+      SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.dark);
   });
 }
 
@@ -32,8 +33,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Navigation',
-      initialRoute: '/',
+      initialRoute: '/Person',
       onGenerateRoute: onGenerateRoute,
+      routes: routes,
       debugShowCheckedModeBanner: !Global.isRelease, //debug标识
     );
   }
@@ -45,6 +47,7 @@ class Login extends StatelessWidget {
     return MaterialApp(
       title: 'Navigation',
       initialRoute: '/Login',
+      routes: routes,
       onGenerateRoute: onGenerateRoute,
       debugShowCheckedModeBanner: true, 
     );
