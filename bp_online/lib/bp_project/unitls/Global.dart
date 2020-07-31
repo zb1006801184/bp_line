@@ -11,6 +11,9 @@ const _themes = <MaterialColor>[
 ];
 
 class Global {
+  //背景色
+  static const BGCOLOR = Color(0xFFf4f5f7);
+  
   static SharedPreferences _prefs;
   static LoginPerson profile = LoginPerson();
   // 网络缓存对象

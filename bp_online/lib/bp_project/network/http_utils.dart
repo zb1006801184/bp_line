@@ -132,7 +132,7 @@ class HttpUtils {
           /// 请求路径，如果 `path` 以 "http(s)"开始, 则 `baseURL` 会被忽略； 否则, 将会和baseUrl拼接出完整的的url.
           path,
           data: data,
-          queryParameters: data,
+          queryParameters: method == GET?data:null,
           options: Options(method: method),
           onReceiveProgress: (int count, int total) {
         // debugPrint(

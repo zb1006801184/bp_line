@@ -12,6 +12,8 @@ import 'demo/network_demo.dart';
 import 'bp_project/login/login_page.dart';
 import 'bp_project/class/title_page.dart';
 import 'bp_project/class/title_page_result.dart';
+import 'bp_project/class/plain_des_page.dart';
+import 'bp_project/class/result_page.dart';
 final routes = {
   '/': (context,{arguments}) => Home(),
   '/dis': (context,{arguments}) => Dis(),
@@ -25,6 +27,9 @@ final routes = {
   '/Login': (context,{arguments}) => LoginPageView(),
   '/TitlePage': (context,{arguments}) => TitlePage(),
   '/TitlePageResult': (context,{arguments}) => TitlePageResult(),
+    '/PlainDesPage': (context,{arguments}) => PlainDesPage(),
+    '/ResultPage': (context,{arguments}) => ResultPage(),
+
 };
 
 var onGenerateRoute = (RouteSettings settings) {

@@ -150,7 +150,9 @@ class TitlePageResult extends StatelessWidget {
                 width: Global.ksWidth,
                 child: ResultBottomButton("修改", "下一页", () {
                   _editData(context);
-                }, () {}),
+                }, () {
+                  Navigator.of(context).pushNamed("/PlainDesPage");
+                }),
               ),
             )
           ],

@@ -69,6 +69,19 @@ class MuchLineInput extends StatelessWidget {
     this.placeholderTitle,
   }) : super(key: key);
 
+  Widget _titleWidget(){
+    if (titles.length < 1) {
+      return Container();
+    }
+  return Container(
+            margin: EdgeInsets.only(left: 16, top: 16),
+            child: Text(
+              titles,
+              style: TextStyle(fontSize: 14),
+            ),
+          );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -77,13 +90,7 @@ class MuchLineInput extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          Container(
-            margin: EdgeInsets.only(left: 16, top: 16),
-            child: Text(
-              titles,
-              style: TextStyle(fontSize: 14),
-            ),
-          ),
+          _titleWidget(),
           Container(
             margin: EdgeInsets.only(left: 16, right: 16, top: 8),
             padding: EdgeInsets.only(left: 8),
@@ -91,13 +98,13 @@ class MuchLineInput extends StatelessWidget {
             height: 120,
             child: TextField(
               controller: controller,
-              style: TextStyle(fontSize: 18),
+              style: TextStyle(fontSize: 16),
               showCursor: true,
               maxLines: 3000,
               decoration: InputDecoration(
                   border: InputBorder.none,
                   contentPadding: EdgeInsets.only(top: 8),
-                  hintStyle: TextStyle(color: Color(0xFFAEAFB7), fontSize: 18),
+                  hintStyle: TextStyle(color: Color(0xFFAEAFB7), fontSize: 16),
                   hintText: placeholderTitle),
             ),
             decoration: new BoxDecoration(
