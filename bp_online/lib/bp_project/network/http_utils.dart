@@ -45,12 +45,12 @@ class HttpUtils {
 
 
     //设置代理
-  (_dio.httpClientAdapter as DefaultHttpClientAdapter).onHttpClientCreate = (client) {
-    client.findProxy = (Uri) {
-      // 用1个开关设置是否开启代理
-      return  'PROXY 192.168.8.158:8888';
-    };
-  };
+  // (_dio.httpClientAdapter as DefaultHttpClientAdapter).onHttpClientCreate = (client) {
+  //   client.findProxy = (Uri) {
+  //     // 用1个开关设置是否开启代理
+  //     return  'PROXY 192.168.8.158:8888';
+  //   };
+  // };
 
 
 
@@ -147,7 +147,9 @@ class HttpUtils {
       ToastView(title: "请求超时，请稍后再试！",).showMessage();
     }else {
       response = e.response;
-      String messageStr = response.data["res_msg"];
+      String res = response.data;
+
+      String messageStr = jsonDecode(res)["resp_msg"];
       ToastView(title: messageStr,).showMessage();
     }
       response = null;

@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
       initialRoute: '/Person',
       onGenerateRoute: onGenerateRoute,
       routes: routes,
-      debugShowCheckedModeBanner: !Global.isRelease, //debug标识
+      debugShowCheckedModeBanner: true, //debug标识
     );
   }
 }
@@ -38,7 +38,7 @@ class Login extends StatelessWidget {
       initialRoute: '/Login',
       routes: routes,
       onGenerateRoute: onGenerateRoute,
-      debugShowCheckedModeBanner: !Global.isRelease, 
+      debugShowCheckedModeBanner: true, 
     );
   }
 }
