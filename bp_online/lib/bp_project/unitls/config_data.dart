@@ -20,10 +20,10 @@ class ConfigData {
           temStr = "${temStr}、${element}";
         }
       });
-      list1.add(temStr);
-      list1.add(model.painProjectSchemeDescribe);
-      map1["title"] = "用什么方法解决这个痛点：";
-      map1["list2"] = list2;
+      list2.add(temStr);
+      list2.add(model.painProjectSchemeDescribe);
+      map2["title"] = "用什么方法解决这个痛点：";
+      map2["list2"] = list2;
 
       result["title"] = title;
       result["map1"] = map1;

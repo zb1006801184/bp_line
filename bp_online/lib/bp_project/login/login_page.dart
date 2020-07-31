@@ -13,7 +13,7 @@ class LoginPageView extends StatelessWidget {
       String data = jsonEncode(response.toJson());
       prefs.setString(DataName.PERSONINFO, data);
       Global.profile = response;
-      Navigator.pushNamed(context, "/person");
+      Navigator.pushNamed(context, "/Person");
     }
   }
 

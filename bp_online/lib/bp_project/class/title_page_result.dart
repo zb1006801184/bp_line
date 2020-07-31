@@ -15,6 +15,7 @@ class TitlePageResult extends StatelessWidget {
         decoration: new BoxDecoration(
           image: new DecorationImage(
             image: new AssetImage("images/bg_pic_top.png"),
+            fit: BoxFit.cover,
           ),
         ),
         child: Stack(

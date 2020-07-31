@@ -56,7 +56,7 @@ class OneLineInput extends StatelessWidget {
     );
   }
 }
-
+//多行输入
 class MuchLineInput extends StatelessWidget {
   final String titles;
   final String placeholderTitle;
@@ -118,7 +118,7 @@ class MuchLineInput extends StatelessWidget {
     );
   }
 }
-
+//单行选择
 class OneLineSelect extends StatelessWidget {
   final String titles;
   final String placeholderTitle;
@@ -187,6 +187,34 @@ class OneLineSelect extends StatelessWidget {
               borderRadius: BorderRadius.all(Radius.circular(4.0)),
             ),
           )
+        ],
+      ),
+    );
+  }
+}
+
+//选择照片
+class SelectImageView extends StatelessWidget {
+  String title;
+  SelectImageView({
+    Key key,
+    this.title,
+  }) : super(key:key);
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.only(left: 16),
+      child: Column(
+        children: [
+          Container(
+            margin: EdgeInsets.only(top: 16),
+            child: Text(title),
+          ),
+          Container(
+            width: 100,
+            height: 100,
+            child: Image(image: AssetImage("images/pic_btn_add.png")),
+          ),
         ],
       ),
     );

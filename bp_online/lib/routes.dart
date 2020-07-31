@@ -14,8 +14,11 @@ import 'bp_project/class/title_page.dart';
 import 'bp_project/class/title_page_result.dart';
 import 'bp_project/class/plain_des_page.dart';
 import 'bp_project/class/result_page.dart';
+import 'bp_project/class/technique_page.dart';
+import 'bp_project/class/technique_result_page.dart';
+import 'bp_project/class/project_model_page.dart';
 final routes = {
-  '/': (context,{arguments}) => Home(),
+  // '/': (context,{arguments}) => Home(),
   '/dis': (context,{arguments}) => Dis(),
   '/test': (context, {arguments}) => Test(),
   '/listView': (context,{arguments}) => simpleListView(),
@@ -27,8 +30,11 @@ final routes = {
   '/Login': (context,{arguments}) => LoginPageView(),
   '/TitlePage': (context,{arguments}) => TitlePage(),
   '/TitlePageResult': (context,{arguments}) => TitlePageResult(),
-    '/PlainDesPage': (context,{arguments}) => PlainDesPage(),
-    '/ResultPage': (context,{arguments}) => ResultPage(),
+  '/PlainDesPage': (context,{arguments}) => PlainDesPage(),
+  '/ResultPage': (context,{arguments}) => ResultPage(),
+  '/TechniquePage': (context,{arguments}) => TechniquePage(),
+  '/TechniqueResultPage': (context,{arguments}) => TechniqueResultPage(),
+  '/ProjectModelPage': (context,{arguments}) => ProjectModelPage(),
 
 };
 

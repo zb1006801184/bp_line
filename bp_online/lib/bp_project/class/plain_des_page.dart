@@ -53,10 +53,10 @@ class _PlainDesPageState extends State<PlainDesPage> {
             CommitBottomButton("提交", () {
               // _savaFormData(context);
               FormDataModel model = FormDataModel();
-              model.painDescribe = "1111";
-              model.painOtherScheme = "2222";
+              model.painDescribe = "为解决者建立一个展示自己真实能力的平台，用自己的闲时对接项目。";
+              model.painOtherScheme = "为解决者建立一个展示自己真实能力的平台，用自己的闲时对接项目。";
               model.painProjectScheme = ["新技术", "新模式"];
-              model.painProjectSchemeDescribe = "333333";
+              model.painProjectSchemeDescribe = "为解决者建立一个展示自己真实能力的平台，用自己的闲时对接项目。";
               Navigator.of(context).pushNamed("/ResultPage",
                   arguments: ConfigData().configResult(model, "痛点解决描述"));
             }),

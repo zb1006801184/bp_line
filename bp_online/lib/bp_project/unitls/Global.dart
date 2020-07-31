@@ -64,4 +64,5 @@ class Global {
   static double ksToolbarHeight = kToolbarHeight;
 //状态栏高度
   static double ksStateHeight = MediaQueryData.fromWindow(window).padding.top;
+  static double ksBottomBar = kBottomNavigationBarHeight;
 }
