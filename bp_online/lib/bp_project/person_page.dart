@@ -133,24 +133,31 @@ class _PersonState extends State<Person> {
           Container(
             height: height - 156 - 63,
             color: const Color(0xFFF4F5F7),
-            child: ListView.builder(
-                itemCount: _words.length,
-                itemExtent: 128.0,
-                itemBuilder: (BuildContext context, int index) {
-                  return PersonItem(
-                      _words,
-                      index,
-                      () => {
-                            Fluttertoast.showToast(
-                                msg: "点击了第" + "  $index" + "  cell",
-                                toastLength: Toast.LENGTH_SHORT,
-                                gravity: ToastGravity.CENTER,
-                                timeInSecForIosWeb: 1,
-                                backgroundColor: Colors.red,
-                                textColor: Colors.white,
-                                fontSize: 16.0),
-                          });
-                }),
+            child: MediaQuery.removePadding(
+              removeTop: true,
+              context: context,
+              child: ListView.builder(
+                  itemCount: _words.length,
+                  itemExtent: 128.0,
+                  itemBuilder: (BuildContext context, int index) {
+                    return PersonItem(
+                        _words,
+                        index,
+                        () => {
+                              Fluttertoast.showToast(
+                                  msg: "点击了第" + "  $index" + "  cell",
+                                  toastLength: Toast.LENGTH_SHORT,
+                                  gravity: ToastGravity.CENTER,
+                                  timeInSecForIosWeb: 1,
+                                  backgroundColor: Colors.red,
+                                  textColor: Colors.white,
+                                  fontSize: 16.0,
+                                  webBgColor: "linear-gradient(to right, #2A2A2A, #2A2A2A)",
+                                  webPosition: "center"
+                                  ),
+                            });
+                  }),
+            ),
           ),
           //底部按钮
           Container(
@@ -177,13 +184,14 @@ class _PersonState extends State<Person> {
       ),
     );
   }
-  void _requestAllData() async{
-   List<FormListModel> respone = await ApiService.getAllFromData();
-   if (respone == null) {
-     return;
-   }
-   setState(() {
-     _words = respone;
-   });
+
+  void _requestAllData() async {
+    List<FormListModel> respone = await ApiService.getAllFromData();
+    if (respone == null) {
+      return;
+    }
+    setState(() {
+      _words = respone;
+    });
   }
 }

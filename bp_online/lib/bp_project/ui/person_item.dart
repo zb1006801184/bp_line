@@ -22,7 +22,7 @@ PersonItem(
     String timeStr = model.createdTime ==null? "" : model.createdTime.substring(0,10);
     return InkWell(
                     child: Container(
-                      margin: EdgeInsets.only(left: 16, right: 16, bottom: 16),
+                      margin: EdgeInsets.only(left: 16, right: 16, top: 16),
                       height: 112,
                       decoration: BoxDecoration(
                         color: Colors.white,

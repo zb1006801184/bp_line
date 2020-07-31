@@ -43,7 +43,7 @@ class OneLineInput extends StatelessWidget {
               decoration: InputDecoration(
                   border: InputBorder.none,
                   contentPadding: EdgeInsets.only(right: 8),
-                  hintStyle: TextStyle(color: Color(0xFFAEAFB7), fontSize: 18),
+                  hintStyle: TextStyle(color: Color(0xFFAEAFB7), fontSize: 16),
                   hintText: placeholderTitle),
             ),
             decoration: new BoxDecoration(
@@ -169,7 +169,7 @@ class OneLineSelect extends StatelessWidget {
                           border: InputBorder.none,
                           contentPadding: EdgeInsets.only(top: 1),
                           hintStyle:
-                              TextStyle(color: Color(0xFFAEAFB7), fontSize: 18),
+                              TextStyle(color: Color(0xFFAEAFB7), fontSize: 16),
                           hintText: placeholderTitle),
                     ),
                   ),

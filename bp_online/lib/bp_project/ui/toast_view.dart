@@ -14,7 +14,9 @@ class ToastView extends StatelessWidget {
         timeInSecForIosWeb: 1,
         backgroundColor: Colors.black,
         textColor: Colors.white,
-        fontSize: 14.0);
+        fontSize: 14.0,
+        webBgColor: "linear-gradient(to right, #2A2A2A, #2A2A2A)",
+        webPosition: "center");
   }
 
   @override
