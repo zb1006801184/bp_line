@@ -8,7 +8,7 @@ class ResultPage extends StatefulWidget {
 class _ResultPageState extends State<ResultPage> {
   @override
   Widget build(BuildContext context) {
-      Map result = ModalRoute.of(context).settings.arguments;
+    Map result = ModalRoute.of(context).settings.arguments;
 
     return Scaffold(
       body: Container(
@@ -21,7 +21,26 @@ class _ResultPageState extends State<ResultPage> {
         ),
         child: Stack(
           children: <Widget>[
-            
+            Container(
+              height: Global.ksHeight,
+              width: Global.ksWidth,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  Container(
+                    margin: EdgeInsets.only(
+                        left: 16,
+                        top:
+                            Global.ksToolbarHeight + Global.ksStateHeight + 16),
+                    child: Text(result["title"],
+                        style: TextStyle(
+                            fontSize: 24,
+                            fontWeight: FontWeight.w600,
+                            color: Color(0xFF1F3ABB))),
+                  ),
+                ],
+              ),
+            ),
             Positioned(
               bottom: 0,
               child: Container(

@@ -54,8 +54,6 @@ class _SelectMuchViewState extends State<SelectMuchView> {
       } else {
         imageStr = "images/list_icon_select.png";
       }
-
-      print("imageStr:${imageStr}");
       tiles.add(
         GestureDetector(
           child: Center(

@@ -149,7 +149,7 @@ class _PersonState extends State<Person> {
                                   toastLength: Toast.LENGTH_SHORT,
                                   gravity: ToastGravity.CENTER,
                                   timeInSecForIosWeb: 1,
-                                  backgroundColor: Colors.red,
+                                  backgroundColor: Colors.black,
                                   textColor: Colors.white,
                                   fontSize: 16.0,
                                   webBgColor: "linear-gradient(to right, #2A2A2A, #2A2A2A)",

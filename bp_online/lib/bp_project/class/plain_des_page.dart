@@ -56,7 +56,7 @@ class _PlainDesPageState extends State<PlainDesPage> {
               model.painDescribe = "1111";
               model.painOtherScheme = "2222";
               model.painProjectScheme = ["新技术", "新模式"];
-              model.painProjectSchemeDescribe = "painProjectSchemeDescribe";
+              model.painProjectSchemeDescribe = "333333";
               Navigator.of(context).pushNamed("/ResultPage",
                   arguments: ConfigData().configResult(model, "痛点解决描述"));
             }),
