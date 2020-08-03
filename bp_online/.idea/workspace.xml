@@ -1,36 +1,83 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="main.dart" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/lib/main.dart">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
-  <component name="ToolWindowManager">
-    <editor active="true" />
-    <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-    </layout>
+  <component name="ChangeListManager">
+    <list default="true" id="4e000801-2239-4cdd-a3a0-18972a736a12" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/bp_online_android.iml" beforeDir="false" afterPath="$PROJECT_DIR$/android/bp_online_android.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bp_online.iml" beforeDir="false" afterPath="$PROJECT_DIR$/bp_online.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Runner.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner.xcodeproj/project.pbxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/bp_project/network/http_utils.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/bp_project/network/http_utils.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/page/dis.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/page/dis.dart" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1">
-    </navigator>
-    <panes>
-      <pane id="ProjectPane">
-        <option name="show-excluded-files" value="false" />
-      </pane>
-    </panes>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="Pixel_2_API_28" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1fPQcd1YmMLoTyKu0QrcTNlAmjc" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="dart.analysis.tool.window.force.activate" value="false" />
+    <property name="io.flutter.reload.alreadyRun" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="dart.analysis.tool.window.force.activate" value="true" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="show.migrate.to.gradle.popup" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4e000801-2239-4cdd-a3a0-18972a736a12" name="Default Changelist" comment="" />
+      <created>1596117329251</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1596117329251</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1358" height="132" key="GridCell.Tab.0.bottom" timestamp="1596125450357">
+      <screen x="0" y="23" width="1440" height="797" />
+    </state>
+    <state width="1358" height="132" key="GridCell.Tab.0.bottom/0.23.1440.797@0.23.1440.797" timestamp="1596125450357" />
+    <state width="1358" height="132" key="GridCell.Tab.0.center" timestamp="1596125450356">
+      <screen x="0" y="23" width="1440" height="797" />
+    </state>
+    <state width="1358" height="132" key="GridCell.Tab.0.center/0.23.1440.797@0.23.1440.797" timestamp="1596125450356" />
+    <state width="1358" height="132" key="GridCell.Tab.0.left" timestamp="1596125450356">
+      <screen x="0" y="23" width="1440" height="797" />
+    </state>
+    <state width="1358" height="132" key="GridCell.Tab.0.left/0.23.1440.797@0.23.1440.797" timestamp="1596125450356" />
+    <state width="1358" height="132" key="GridCell.Tab.0.right" timestamp="1596125450356">
+      <screen x="0" y="23" width="1440" height="797" />
+    </state>
+    <state width="1358" height="132" key="GridCell.Tab.0.right/0.23.1440.797@0.23.1440.797" timestamp="1596125450356" />
+    <state x="209" y="40" key="SettingsEditor" timestamp="1596125416622">
+      <screen x="0" y="23" width="1440" height="797" />
+    </state>
+    <state x="209" y="40" key="SettingsEditor/0.23.1440.797@0.23.1440.797" timestamp="1596125416622" />
+    <state x="108" y="123" width="1200" height="557" key="com.android.tools.idea.avdmanager.AvdListDialog" timestamp="1596122147743">
+      <screen x="0" y="23" width="1440" height="797" />
+    </state>
+    <state x="108" y="123" width="1200" height="557" key="com.android.tools.idea.avdmanager.AvdListDialog/0.23.1440.797@0.23.1440.797" timestamp="1596122147743" />
+    <state x="357" y="234" key="com.intellij.ide.util.TipDialog" timestamp="1596123880730">
+      <screen x="0" y="23" width="1440" height="797" />
+    </state>
+    <state x="357" y="234" key="com.intellij.ide.util.TipDialog/0.23.1440.797@0.23.1440.797" timestamp="1596123880730" />
   </component>
 </project>

@@ -9,7 +9,7 @@ class Dis extends StatelessWidget {
         title: Text("发现"),
       ),
       body: Center(
-        child: Text("This is new route ！！！"),
+        child: Text("This is new route "),
       ),
     );
   }

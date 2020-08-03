@@ -38,7 +38,7 @@ class Login extends StatelessWidget {
       initialRoute: '/Login',
       routes: routes,
       onGenerateRoute: onGenerateRoute,
-      debugShowCheckedModeBanner: !Global.isRelease, 
+      // debugShowCheckedModeBanner: !Global.isRelease, 
     );
   }
 }
