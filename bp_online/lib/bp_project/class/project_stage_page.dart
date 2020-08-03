@@ -41,7 +41,22 @@ class _ProjetStagePageState extends State<ProjetStagePage> {
                 ],
               ),
             ),
-            Positioned(bottom: 12, child: CommitBottomButton("提交", () {}))
+            Positioned(bottom: 12, child: CommitBottomButton("提交", () {
+              Map result = {
+                    "title": "项目阶段",
+                    "map1": {
+                      "title": "项目阶段",
+                      "list1": ["原创模式样板间市场验证成功"]
+                    },
+                    "map2": {
+                      "title": "创业故事：",
+                      "list2": ["数据资产、技术授权为解决者建立一个展示自己真实能力的平台，用自己的闲时对接项目。"]
+                    }
+                  };
+                  Navigator.of(context)
+                      .pushNamed("/ResultPage", arguments: result);
+
+            }))
           ],
         ),
         onTap: () {

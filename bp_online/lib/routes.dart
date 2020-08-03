@@ -20,6 +20,9 @@ import 'bp_project/class/project_model_page.dart';
 import 'bp_project/class/project_model_result_page.dart';
 import 'bp_project/class/profit_model_page.dart';
 import 'bp_project/class/project_stage_page.dart';
+import 'bp_project/class/founder_page.dart';
+import 'bp_project/class/founder_result_page.dart';
+import 'bp_project/class/cofounder_list_page.dart';
 final routes = {
   // '/': (context,{arguments}) => Home(),
   '/dis': (context,{arguments}) => Dis(),
@@ -41,7 +44,9 @@ final routes = {
   '/ProjectModelResultPage': (context,{arguments}) => ProjectModelResultPage(),
   '/ProfitModelPage': (context,{arguments}) => ProfitModelPage(),
   '/ProjectStagePage': (context,{arguments}) => ProjetStagePage(),
-
+  '/FounderPage': (context,{arguments}) => FounderPage(),
+  '/FounderResultPage': (context,{arguments}) => FounderResultPage(),
+  '/CofounderListPage': (context,{arguments}) => CofounderListPage(),
 };
 
 var onGenerateRoute = (RouteSettings settings) {

@@ -142,6 +142,11 @@ class _ResultPageState extends State<ResultPage> {
                       "/ProjectStagePage",
                     );
                   }
+                  if (title == "项目阶段") {
+                     Navigator.of(context).pushNamed(
+                      "/FounderPage",
+                    );
+                  }
                 }),
               ),
             )
