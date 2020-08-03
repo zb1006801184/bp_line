@@ -17,6 +17,9 @@ import 'bp_project/class/result_page.dart';
 import 'bp_project/class/technique_page.dart';
 import 'bp_project/class/technique_result_page.dart';
 import 'bp_project/class/project_model_page.dart';
+import 'bp_project/class/project_model_result_page.dart';
+import 'bp_project/class/profit_model_page.dart';
+import 'bp_project/class/project_stage_page.dart';
 final routes = {
   // '/': (context,{arguments}) => Home(),
   '/dis': (context,{arguments}) => Dis(),
@@ -35,6 +38,9 @@ final routes = {
   '/TechniquePage': (context,{arguments}) => TechniquePage(),
   '/TechniqueResultPage': (context,{arguments}) => TechniqueResultPage(),
   '/ProjectModelPage': (context,{arguments}) => ProjectModelPage(),
+  '/ProjectModelResultPage': (context,{arguments}) => ProjectModelResultPage(),
+  '/ProfitModelPage': (context,{arguments}) => ProfitModelPage(),
+  '/ProjectStagePage': (context,{arguments}) => ProjetStagePage(),
 
 };
 

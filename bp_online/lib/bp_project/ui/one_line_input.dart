@@ -56,6 +56,7 @@ class OneLineInput extends StatelessWidget {
     );
   }
 }
+
 //多行输入
 class MuchLineInput extends StatelessWidget {
   final String titles;
@@ -69,17 +70,17 @@ class MuchLineInput extends StatelessWidget {
     this.placeholderTitle,
   }) : super(key: key);
 
-  Widget _titleWidget(){
+  Widget _titleWidget() {
     if (titles.length < 1) {
       return Container();
     }
-  return Container(
-            margin: EdgeInsets.only(left: 16, top: 16),
-            child: Text(
-              titles,
-              style: TextStyle(fontSize: 14),
-            ),
-          );
+    return Container(
+      margin: EdgeInsets.only(left: 16, top: 16),
+      child: Text(
+        titles,
+        style: TextStyle(fontSize: 14),
+      ),
+    );
   }
 
   @override
@@ -118,6 +119,7 @@ class MuchLineInput extends StatelessWidget {
     );
   }
 }
+
 //单行选择
 class OneLineSelect extends StatelessWidget {
   final String titles;
@@ -199,18 +201,22 @@ class SelectImageView extends StatelessWidget {
   SelectImageView({
     Key key,
     this.title,
-  }) : super(key:key);
+  }) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Container(
+      width: Global.ksWidth,
+      // color: Colors.red,
       padding: EdgeInsets.only(left: 16),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
-            margin: EdgeInsets.only(top: 16),
+            margin: EdgeInsets.only(top: 16, left: 16),
             child: Text(title),
           ),
           Container(
+            margin: EdgeInsets.only(top: 16, left: 16),
             width: 100,
             height: 100,
             child: Image(image: AssetImage("images/pic_btn_add.png")),

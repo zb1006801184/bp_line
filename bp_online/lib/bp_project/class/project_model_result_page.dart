@@ -1,37 +1,25 @@
 import 'package:bp_online/page_index.dart';
 
-class ResultPage extends StatefulWidget {
+class ProjectModelResultPage extends StatefulWidget {
   @override
-  _ResultPageState createState() => _ResultPageState();
+  _ProjectModelResultPageState createState() => _ProjectModelResultPageState();
 }
 
-class _ResultPageState extends State<ResultPage> {
-  List<Widget> buildItemWidget(context, List dataList) {
-    List<Widget> itemList = [];
+class _ProjectModelResultPageState extends State<ProjectModelResultPage> {
+  List<Widget> _buildListImage(List dataList) {
+    List<Widget> imageWidget = [];
     for (var item in dataList) {
-      itemList.add(Row(
-        children: [
-          Container(
-            width: Global.ksWidth - 32,
-            margin: EdgeInsets.only(left: 16, right: 16, top: 16),
-            child: Text(item,
-                style: TextStyle(
-                  fontSize: 16,
-                )),
-          ),
-        ],
+      imageWidget.add(Container(
+        margin: EdgeInsets.only(left: 16, right: 16, top: 16),
+        height: 457,
+        color: Colors.red,
       ));
     }
-    return itemList;
+    return imageWidget;
   }
 
   @override
   Widget build(BuildContext context) {
-    Map result = ModalRoute.of(context).settings.arguments;
-    Map map1 = result["map1"];
-    Map map2 = result["map2"];
-    List list1 = map1["list1"];
-    List list2 = map2["list2"];
     return Scaffold(
       body: Container(
         height: Global.ksHeight,
@@ -43,30 +31,32 @@ class _ResultPageState extends State<ResultPage> {
           ),
         ),
         child: Stack(
-          children: <Widget>[
+          children: [
             Container(
-              height: Global.ksHeight,
               width: Global.ksWidth,
+              height: Global.ksHeight,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
+                children: [
                   Container(
                     margin: EdgeInsets.only(
                         left: 16,
                         top:
                             Global.ksToolbarHeight + Global.ksStateHeight + 16),
-                    child: Text(result["title"],
+                    child: Text("项目模式概述",
                         style: TextStyle(
-                            fontSize: 24,
-                            fontWeight: FontWeight.w600,
-                            color: Color(0xFF1F3ABB))),
+                          fontSize: 24,
+                          fontWeight: FontWeight.w600,
+                          color: Color(0xFF1F3ABB),
+                          decoration: TextDecoration.none,
+                        )),
                   ),
                   Expanded(
                       child: Scrollbar(
                           child: SingleChildScrollView(
                     child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        //第一个标题
                         Container(
                             margin: EdgeInsets.only(top: 32, left: 16),
                             child: Row(
@@ -79,7 +69,7 @@ class _ResultPageState extends State<ResultPage> {
                                 Container(
                                   margin: EdgeInsets.only(left: 8),
                                   child: Text(
-                                    "${map1["title"]}",
+                                    "项目的模式创新描述：",
                                     style: TextStyle(
                                         fontWeight: FontWeight.w600,
                                         fontSize: 16),
@@ -87,12 +77,13 @@ class _ResultPageState extends State<ResultPage> {
                                 )
                               ],
                             )),
-                        //第一个内容
                         Container(
-                          child:
-                              Column(children: buildItemWidget(context, list1)),
+                          margin: EdgeInsets.only(left: 16, top: 16, right: 16),
+                          child: Text(
+                            "为解决者建立一个展示自己真实能力的平台，用自己的闲时对接项目。",
+                            style: TextStyle(fontSize: 16),
+                          ),
                         ),
-                        //第二个标题
                         Container(
                             margin: EdgeInsets.only(top: 32, left: 16),
                             child: Row(
@@ -105,7 +96,7 @@ class _ResultPageState extends State<ResultPage> {
                                 Container(
                                   margin: EdgeInsets.only(left: 8),
                                   child: Text(
-                                    "${map2["title"]}",
+                                    "互联网演示地址：",
                                     style: TextStyle(
                                         fontWeight: FontWeight.w600,
                                         fontSize: 16),
@@ -113,11 +104,26 @@ class _ResultPageState extends State<ResultPage> {
                                 )
                               ],
                             )),
-                        //第二个内容
                         Container(
-                          child:
-                              Column(children: buildItemWidget(context, list2)),
+                          margin: EdgeInsets.only(left: 16, top: 16, right: 16),
+                          child: Text(
+                            "www.baidu.com",
+                            style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.w600,
+                              color: Color(0xFF0FA2FF),
+                              decoration: TextDecoration.underline,
+                            ),
+                          ),
                         ),
+                        Container(
+                          child: Column(
+                            children: _buildListImage(["", "", ""]),
+                          ),
+                        ),
+                        Container(
+                          height: 128,
+                        )
                       ],
                     ),
                   ))),
@@ -125,23 +131,15 @@ class _ResultPageState extends State<ResultPage> {
               ),
             ),
             Positioned(
-              bottom: 0,
+              bottom: 12,
               child: Container(
                 width: Global.ksWidth,
                 child: ResultBottomButton("修改", "下一页", () {
                   // _editData(context);
                 }, () {
-                  String title = result["title"];
-                  if (title == "痛点解决描述") {
-                    Navigator.of(context).pushNamed(
-                      "/TechniquePage",
-                    );
-                  }
-                  if (title == "项目的盈利模式") {
-                    Navigator.of(context).pushNamed(
-                      "/ProjectStagePage",
-                    );
-                  }
+                  Navigator.of(context).pushNamed(
+                    "/ProfitModelPage",
+                  );
                 }),
               ),
             )

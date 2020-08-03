@@ -51,7 +51,7 @@ class _ProjectModelPageState extends State<ProjectModelPage> {
           Positioned(
             bottom: 12,
             child: CommitBottomButton("提交", () {
-              // Navigator.of(context).pushNamed("/TechniqueResultPage");
+              Navigator.of(context).pushNamed("/ProjectModelResultPage");
             }),
           )
         ],
