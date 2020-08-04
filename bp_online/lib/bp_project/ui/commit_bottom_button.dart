@@ -29,7 +29,7 @@ class CommitBottomButton extends StatelessWidget {
               colorBrightness: Brightness.dark,
               splashColor: Colors.grey,
               child: Text(
-                "提交",
+                title,
                 style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600),
               ),
               shape: RoundedRectangleBorder(

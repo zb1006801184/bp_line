@@ -56,6 +56,74 @@ class OneLineInput extends StatelessWidget {
     );
   }
 }
+//单行输入带单位
+
+class OneLineInputUnit extends StatelessWidget {
+  final String titles;
+  final String placeholderTitle;
+  final String unit;
+  final TextEditingController controller;
+
+  OneLineInputUnit({
+    Key key,
+    this.titles,
+    this.controller,
+    this.placeholderTitle,
+    this.unit,
+  }) : super(key: key);
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: Global.ksWidth,
+      color: Color(0xFFF4F5F7),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Container(
+            margin: EdgeInsets.only(left: 16, top: 16),
+            child: Text(
+              titles,
+              style: TextStyle(fontSize: 14),
+            ),
+          ),
+          Row(
+            children: [
+              Container(
+                margin: EdgeInsets.only(left: 16, top: 8),
+                padding: EdgeInsets.only(left: 8),
+                width: Global.ksWidth - 69,
+                height: 48,
+                child: TextField(
+                  maxLines: 1,
+                  controller: controller,
+                  style: TextStyle(fontSize: 18),
+                  showCursor: true,
+                  onSubmitted: (String text) {
+                    FocusScope.of(context).requestFocus(FocusNode());
+                  },
+                  decoration: InputDecoration(
+                      border: InputBorder.none,
+                      contentPadding: EdgeInsets.only(right: 8),
+                      hintStyle:
+                          TextStyle(color: Color(0xFFAEAFB7), fontSize: 16),
+                      hintText: placeholderTitle),
+                ),
+                decoration: new BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.all(Radius.circular(4.0)),
+                ),
+              ),
+              Container(
+                margin: EdgeInsets.only(left: 8,top: 8),
+                child: Text(unit),
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+}
 
 //多行输入
 class MuchLineInput extends StatelessWidget {
@@ -206,7 +274,7 @@ class SelectImageView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: Global.ksWidth,
-      // color: Colors.red,
+      color: Color(0xFFF4F5F7),
       padding: EdgeInsets.only(left: 16),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,

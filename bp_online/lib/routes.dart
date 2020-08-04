@@ -23,6 +23,13 @@ import 'bp_project/class/project_stage_page.dart';
 import 'bp_project/class/founder_page.dart';
 import 'bp_project/class/founder_result_page.dart';
 import 'bp_project/class/cofounder_list_page.dart';
+import 'bp_project/class/team_page.dart';
+import 'bp_project/class/team_result_page.dart';
+import 'bp_project/class/project_valuation_page.dart';
+import 'bp_project/class/financing_page.dart';
+import 'bp_project/class/talent_page.dart';
+import 'bp_project/class/money_use_page.dart';
+import 'bp_project/class/committed_page.dart';
 final routes = {
   // '/': (context,{arguments}) => Home(),
   '/dis': (context,{arguments}) => Dis(),
@@ -47,6 +54,14 @@ final routes = {
   '/FounderPage': (context,{arguments}) => FounderPage(),
   '/FounderResultPage': (context,{arguments}) => FounderResultPage(),
   '/CofounderListPage': (context,{arguments}) => CofounderListPage(),
+  '/TeamPage': (context,{arguments}) => TeamPage(),
+  '/TeamResultPage': (context,{arguments}) => TeamResultPage(),
+  '/ProjectValuationPage': (context,{arguments}) => ProjectValuationPage(),
+  '/FinancingPage': (context,{arguments}) => FinancingPage(),
+  '/TalentPage': (context,{arguments}) => TalentPage(),
+  '/MoneyUsePage': (context,{arguments}) => MoneyUsePage(),
+  '/CommittedPage': (context,{arguments}) => CommittedPage(),
+
 };
 
 var onGenerateRoute = (RouteSettings settings) {

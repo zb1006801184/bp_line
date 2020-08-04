@@ -21,8 +21,6 @@ class _PersonState extends State<Person> {
     _requestAllData();
   }
 
-  final width = window.physicalSize.width / 2;
-  final height = window.physicalSize.height / 2;
 
 //新建bp
   _creatProject(context) {
@@ -43,14 +41,14 @@ class _PersonState extends State<Person> {
           Container(
             color: Colors.white,
             constraints:
-                BoxConstraints.tightFor(width: width, height: 156), //卡片大小
+                BoxConstraints.tightFor(width: Global.ksWidth, height: 92+Global.ksStateHeight+Global.ksToolbarHeight), //卡片大小
             child: Column(
               children: <Widget>[
                 //设置
                 Container(
                     color: Colors.white,
                     constraints:
-                        BoxConstraints.tightFor(width: width, height: 64),
+                        BoxConstraints.tightFor(width: Global.ksWidth, height: Global.ksStateHeight+Global.ksToolbarHeight),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       crossAxisAlignment: CrossAxisAlignment.end,
@@ -58,7 +56,7 @@ class _PersonState extends State<Person> {
                         IconButton(
                           icon: Icon(Icons.settings),
                           onPressed: () {
-                            print("点击设置$width zz");
+                            print("点击设置${Global.ksWidth} zz");
                           },
                         ),
                       ],
@@ -67,7 +65,7 @@ class _PersonState extends State<Person> {
                 InkWell(
                   child: Container(
                     constraints:
-                        BoxConstraints.tightForFinite(width: width, height: 92),
+                        BoxConstraints.tightForFinite(width: Global.ksWidth, height: 92),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -131,7 +129,7 @@ class _PersonState extends State<Person> {
           ),
           //listView
           Container(
-            height: height - 156 - 63,
+            height: Global.ksHeight - Global.ksStateHeight-Global.ksToolbarHeight - 92 - 63,
             color: const Color(0xFFF4F5F7),
             child: MediaQuery.removePadding(
               removeTop: true,
@@ -161,7 +159,7 @@ class _PersonState extends State<Person> {
           ),
           //底部按钮
           Container(
-            width: width - 32,
+            width: Global.ksWidth - 32,
             height: 48,
             color: const Color(0xFFF4F5F7),
             child: FlatButton(

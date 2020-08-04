@@ -83,7 +83,7 @@ class _CofounderListPageState extends State<CofounderListPage> {
             Positioned(
                 bottom: 12,
                 child: ResultBottomButton("添加联合创始人", "下一页", () {}, () {
-                  
+                  Navigator.of(context).pushNamed("/TeamPage");
                 }))
           ],
         ),

@@ -25,13 +25,54 @@ class _ResultPageState extends State<ResultPage> {
     return itemList;
   }
 
+  Container buildThreeItem(context, List dataList, String title) {
+    if (dataList != null) {
+      return Container(
+        child: Column(
+          children: [
+            Container(
+                margin: EdgeInsets.only(top: 32, left: 16),
+                child: Row(
+                  children: [
+                    Container(
+                      width: 8,
+                      height: 8,
+                      color: Colors.red,
+                    ),
+                    Container(
+                      margin: EdgeInsets.only(left: 8),
+                      child: Text(
+                        title,
+                        style: TextStyle(
+                            fontWeight: FontWeight.w600, fontSize: 16),
+                      ),
+                    )
+                  ],
+                )),
+            //第二个内容
+            Container(
+              child: Column(children: buildItemWidget(context, dataList)),
+            ),
+          ],
+        ),
+      );
+    } else {
+      Container(
+        child: Text("data"),
+      );
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     Map result = ModalRoute.of(context).settings.arguments;
     Map map1 = result["map1"];
     Map map2 = result["map2"];
+    Map map3 = result["map3"];
     List list1 = map1["list1"];
     List list2 = map2["list2"];
+    List list3 = map3 == null ? null : map3["list3"];
+
     return Scaffold(
       body: Container(
         height: Global.ksHeight,
@@ -118,6 +159,12 @@ class _ResultPageState extends State<ResultPage> {
                           child:
                               Column(children: buildItemWidget(context, list2)),
                         ),
+                        //第三个（不一定有）
+                        Container(
+                          child: buildThreeItem(context, list3,
+                              map3 == null ? null : map3["title"]),
+                        ),
+                       
                       ],
                     ),
                   ))),
@@ -132,21 +179,7 @@ class _ResultPageState extends State<ResultPage> {
                   // _editData(context);
                 }, () {
                   String title = result["title"];
-                  if (title == "痛点解决描述") {
-                    Navigator.of(context).pushNamed(
-                      "/TechniquePage",
-                    );
-                  }
-                  if (title == "项目的盈利模式") {
-                    Navigator.of(context).pushNamed(
-                      "/ProjectStagePage",
-                    );
-                  }
-                  if (title == "项目阶段") {
-                     Navigator.of(context).pushNamed(
-                      "/FounderPage",
-                    );
-                  }
+                  _pushWidget(title);
                 }),
               ),
             )
@@ -154,5 +187,43 @@ class _ResultPageState extends State<ResultPage> {
         ),
       ),
     );
+  }
+
+  _pushWidget(String title) {
+    if (title == "痛点解决描述") {
+      Navigator.of(context).pushNamed(
+        "/TechniquePage",
+      );
+    }
+    if (title == "项目的盈利模式") {
+      Navigator.of(context).pushNamed(
+        "/ProjectStagePage",
+      );
+    }
+    if (title == "项目阶段") {
+      Navigator.of(context).pushNamed(
+        "/FounderPage",
+      );
+    }
+    if (title == "项目估值") {
+      Navigator.of(context).pushNamed(
+        "/FinancingPage",
+      );
+    }
+    if (title == "融资需求") {
+      Navigator.of(context).pushNamed(
+        "/TalentPage",
+      );
+    }
+    if (title == "融智需求") {
+      Navigator.of(context).pushNamed(
+        "/MoneyUsePage",
+      );
+    }
+    if (title == "融资使用计划") {
+      Navigator.of(context).pushNamed(
+        "/CommittedPage",
+      );
+    }
   }
 }
