@@ -35,8 +35,8 @@ class ApiService {
       var responseData = jsonDecode(response.data);
       List listData = responseData["data"];
       List data = [];
-      if (listData.length < 1) {
-        return data;
+      if (listData == null) {
+        return null;
       }
       return List()
         ..addAll((listData ?? []).map((o) => FormListModel.fromJson(o)));

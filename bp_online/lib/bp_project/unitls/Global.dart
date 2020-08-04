@@ -11,6 +11,9 @@ const _themes = <MaterialColor>[
 ];
 
 class Global {
+  //背景色
+  static const BGCOLOR = Color(0xFFf4f5f7);
+  
   static SharedPreferences _prefs;
   static LoginPerson profile = LoginPerson();
   // 网络缓存对象
@@ -55,10 +58,23 @@ class Global {
   // static saveProfile() =>
   //     _prefs.setString("profile", jsonEncode(profile.toJson()));
 //设备宽高
-  static double ksWidth = window.physicalSize.width / 2;
-  static double ksHeight = window.physicalSize.height / 2;
+  static double ksWidth = _width;
+  static double ksHeight = _height;
 //导航栏的高度
   static double ksToolbarHeight = kToolbarHeight;
 //状态栏高度
   static double ksStateHeight = MediaQueryData.fromWindow(window).padding.top;
+  static double ksBottomBar = kBottomNavigationBarHeight;
+
+
+  static double get _width {
+    MediaQueryData mediaQuery = MediaQueryData.fromWindow(window);
+    return mediaQuery.size.width;
+  }
+
+  static double get _height {
+    MediaQueryData mediaQuery = MediaQueryData.fromWindow(window);
+    return mediaQuery.size.height;
+  }
+
 }
