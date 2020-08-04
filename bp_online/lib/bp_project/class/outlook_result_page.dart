@@ -1,4 +1,5 @@
 //项目展望结果页
+import 'package:bp_online/bp_project/person_page.dart';
 import 'package:bp_online/page_index.dart';
 
 class OutlookResultPage extends StatefulWidget {
@@ -39,7 +40,8 @@ class _OutlookResultPageState extends State<OutlookResultPage> {
                         ListTile(
                           title: Text(
                             "为解决者建立一个展示自己真实能力的平台，用自己的闲时对接项目。为解决者建立一个展示自己真实能力的平台，用自己的闲时对接项目。",
-                            style: TextStyle(fontSize: 16,fontWeight: FontWeight.w600),
+                            style: TextStyle(
+                                fontSize: 16, fontWeight: FontWeight.w600),
                           ),
                         ),
                       ],
@@ -47,8 +49,12 @@ class _OutlookResultPageState extends State<OutlookResultPage> {
                   ],
                 )),
             Positioned(
-                bottom: 12, child: ResultBottomButton("修改", "完成", () {}, () {
-                  Navigator.of(context).pushNamed("/Person");
+                bottom: 12,
+                child: ResultBottomButton("修改", "完成", () {}, () {
+                  Navigator.of(context).pushAndRemoveUntil(
+                      MaterialPageRoute(builder: (context) => Person()),
+                      (route) => route == null);
+                  // Navigator.of(context).pushNamedAndRemoveUntil('/Person', ModalRoute.withName('/Person'));
                 }))
           ],
         ),
