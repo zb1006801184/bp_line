@@ -48,7 +48,7 @@ class LoginPageView extends StatelessWidget {
             ),
             //电话输入框
             Container(
-              margin: EdgeInsets.only(top: 56),
+              margin: EdgeInsets.only(top: 54),
               padding: EdgeInsets.only(left: 16, right: 16),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
