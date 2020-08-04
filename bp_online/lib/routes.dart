@@ -30,6 +30,9 @@ import 'bp_project/class/financing_page.dart';
 import 'bp_project/class/talent_page.dart';
 import 'bp_project/class/money_use_page.dart';
 import 'bp_project/class/committed_page.dart';
+import 'bp_project/class/committed_result_page.dart';
+import 'bp_project/class/outlook_page.dart';
+import 'bp_project/class/outlook_result_page.dart';
 final routes = {
   // '/': (context,{arguments}) => Home(),
   '/dis': (context,{arguments}) => Dis(),
@@ -61,7 +64,9 @@ final routes = {
   '/TalentPage': (context,{arguments}) => TalentPage(),
   '/MoneyUsePage': (context,{arguments}) => MoneyUsePage(),
   '/CommittedPage': (context,{arguments}) => CommittedPage(),
-
+  '/CommittedResultPage': (context,{arguments}) => CommittedResultPage(),
+  '/OutlookPage': (context,{arguments}) => OutlookPage(),
+  '/OutlookResultPage': (context,{arguments}) => OutlookResultPage(),
 };
 
 var onGenerateRoute = (RouteSettings settings) {
