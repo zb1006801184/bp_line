@@ -5,6 +5,7 @@ import 'package:flutter/services.dart';
 import 'package:english_words/english_words.dart'; //随机生成单纯的库
 import 'ui/person_item.dart';
 import 'package:bp_online/page_index.dart';
+import 'package:flutter/scheduler.dart';
 
 class Person extends StatefulWidget {
   @override
@@ -13,26 +14,36 @@ class Person extends StatefulWidget {
 
 class _PersonState extends State<Person> {
   var _words = <FormListModel>[];
-
-  @override
-  void initState() {
-    super.initState();
-    // _retrieveData();
-    _requestAllData();
-  }
-
-
+  var argument;
 //新建bp
   _creatProject(context) {
     Navigator.pushNamed(context, "/TitlePage");
   }
 
   @override
-  Widget build(BuildContext context) {
+  void initState() {
+    super.initState();
     SystemUiOverlayStyle systemUiOverlayStyle =
         SystemUiOverlayStyle(statusBarColor: Colors.transparent);
     SystemChrome.setSystemUIOverlayStyle(systemUiOverlayStyle);
 
+    SchedulerBinding.instance.addPostFrameCallback((_) => {
+          _requestAllData(),
+        });
+  }
+
+  _showMessage(Map argument) {
+    if (argument == null) {
+      return;
+    }
+    if (argument["type"] == "end") {
+      ToastView().showAccomplish(context);
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    argument = ModalRoute.of(context).settings.arguments;
     return Scaffold(
       body: Column(
         mainAxisSize: MainAxisSize.max,
@@ -40,15 +51,18 @@ class _PersonState extends State<Person> {
           //头部视图
           Container(
             color: Colors.white,
-            constraints:
-                BoxConstraints.tightFor(width: Global.ksWidth, height: 92+Global.ksStateHeight+Global.ksToolbarHeight), //卡片大小
+            constraints: BoxConstraints.tightFor(
+                width: Global.ksWidth,
+                height:
+                    92 + Global.ksStateHeight + Global.ksToolbarHeight), //卡片大小
             child: Column(
               children: <Widget>[
                 //设置
                 Container(
                     color: Colors.white,
-                    constraints:
-                        BoxConstraints.tightFor(width: Global.ksWidth, height: Global.ksStateHeight+Global.ksToolbarHeight),
+                    constraints: BoxConstraints.tightFor(
+                        width: Global.ksWidth,
+                        height: Global.ksStateHeight + Global.ksToolbarHeight),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       crossAxisAlignment: CrossAxisAlignment.end,
@@ -57,6 +71,7 @@ class _PersonState extends State<Person> {
                           icon: Icon(Icons.settings),
                           onPressed: () {
                             print("点击设置${Global.ksWidth} zz");
+                            ToastView().showLoading(context);
                           },
                         ),
                       ],
@@ -64,8 +79,8 @@ class _PersonState extends State<Person> {
                 //个人信息
                 InkWell(
                   child: Container(
-                    constraints:
-                        BoxConstraints.tightForFinite(width: Global.ksWidth, height: 92),
+                    constraints: BoxConstraints.tightForFinite(
+                        width: Global.ksWidth, height: 92),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -129,7 +144,11 @@ class _PersonState extends State<Person> {
           ),
           //listView
           Container(
-            height: Global.ksHeight - Global.ksStateHeight-Global.ksToolbarHeight - 92 - 63,
+            height: Global.ksHeight -
+                Global.ksStateHeight -
+                Global.ksToolbarHeight -
+                92 -
+                63,
             color: const Color(0xFFF4F5F7),
             child: MediaQuery.removePadding(
               removeTop: true,
@@ -150,9 +169,9 @@ class _PersonState extends State<Person> {
                                   backgroundColor: Colors.black,
                                   textColor: Colors.white,
                                   fontSize: 16.0,
-                                  webBgColor: "linear-gradient(to right, #2A2A2A, #2A2A2A)",
-                                  webPosition: "center"
-                                  ),
+                                  webBgColor:
+                                      "linear-gradient(to right, #2A2A2A, #2A2A2A)",
+                                  webPosition: "center"),
                             });
                   }),
             ),
@@ -184,12 +203,15 @@ class _PersonState extends State<Person> {
   }
 
   void _requestAllData() async {
+    ToastView().showLoading(context);
     List<FormListModel> respone = await ApiService.getAllFromData();
     if (respone == null) {
       return;
     }
     setState(() {
       _words = respone;
+      ToastView().dismissLoading(context);
     });
+    _showMessage(argument);
   }
 }

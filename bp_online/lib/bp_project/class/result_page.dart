@@ -37,7 +37,11 @@ class _ResultPageState extends State<ResultPage> {
                     Container(
                       width: 8,
                       height: 8,
-                      color: Colors.red,
+                      // color: Colors.red,
+                      decoration: new BoxDecoration(
+                        color: Global.BUTTONBGCOLOR,
+                        borderRadius: BorderRadius.all(Radius.circular(4.0)),
+                      ),
                     ),
                     Container(
                       margin: EdgeInsets.only(left: 8),
@@ -115,7 +119,12 @@ class _ResultPageState extends State<ResultPage> {
                                 Container(
                                   width: 8,
                                   height: 8,
-                                  color: Colors.red,
+                                  // color: Colors.red,
+                                  decoration: new BoxDecoration(
+                                    color: Global.BUTTONBGCOLOR,
+                                    borderRadius:
+                                        BorderRadius.all(Radius.circular(4.0)),
+                                  ),
                                 ),
                                 Container(
                                   margin: EdgeInsets.only(left: 8),
@@ -141,7 +150,11 @@ class _ResultPageState extends State<ResultPage> {
                                 Container(
                                   width: 8,
                                   height: 8,
-                                  color: Colors.red,
+                                  decoration: new BoxDecoration(
+                                    color: Global.BUTTONBGCOLOR,
+                                    borderRadius:
+                                        BorderRadius.all(Radius.circular(4.0)),
+                                  ),
                                 ),
                                 Container(
                                   margin: EdgeInsets.only(left: 8),
@@ -164,7 +177,6 @@ class _ResultPageState extends State<ResultPage> {
                           child: buildThreeItem(context, list3,
                               map3 == null ? null : map3["title"]),
                         ),
-                       
                       ],
                     ),
                   ))),

@@ -10,6 +10,14 @@ class _PlainDesPageState extends State<PlainDesPage> {
   final controllerPainDescribe = TextEditingController();
   final controllePainOtherScheme = TextEditingController();
   final controllerPainProjectSchemeDescribe = TextEditingController();
+  SelectMuchView selectCell = SelectMuchView(
+    title: "您的项目用什么方法解决这个痛点（多选）",
+    itemList: [
+      "新技术",
+      "新模式",
+    ],
+    selectItemList: [],
+  );
   @override
   Widget build(BuildContext context) {
     FormDataModel model = ModalRoute.of(context).settings.arguments;
@@ -37,28 +45,17 @@ class _PlainDesPageState extends State<PlainDesPage> {
               placeholderTitle: "当前社会解决这个痛点的方法",
               controller: controllePainOtherScheme,
             ),
-            SelectMuchView(
-              title: "您的项目用什么方法解决这个痛点（多选）",
-              itemList: [
-                "新技术",
-                "新模式",
-              ],
-              selectItemList: [],
-            ),
+            selectCell,
             MuchLineInput(
               titles: "",
               placeholderTitle: "请简单描述即可，后面页面有关于技术与模、\n式的详细内容填写页面。",
               controller: controllerPainProjectSchemeDescribe,
             ),
             CommitBottomButton("提交", () {
-              // _savaFormData(context);
-              FormDataModel model = FormDataModel();
-              model.painDescribe = "为解决者建立一个展示自己真实能力的平台，用自己的闲时对接项目。";
-              model.painOtherScheme = "为解决者建立一个展示自己真实能力的平台，用自己的闲时对接项目。";
-              model.painProjectScheme = ["新技术", "新模式"];
-              model.painProjectSchemeDescribe = "为解决者建立一个展示自己真实能力的平台，用自己的闲时对接项目。";
-              Navigator.of(context).pushNamed("/ResultPage",
-                  arguments: ConfigData().configResult(model, "痛点解决描述"));
+              if (!_checkParam()) {
+                return;
+              }
+              _commitResult();
             }),
           ],
         ),
@@ -67,5 +64,48 @@ class _PlainDesPageState extends State<PlainDesPage> {
         },
       ),
     );
+  }
+
+  bool _checkParam() {
+    if (controllerPainDescribe.text.length < 1) {
+      ToastView(
+        title: "请输入痛点描述！",
+      ).showMessage();
+      return false;
+    }
+    if (controllePainOtherScheme.text.length < 1) {
+      ToastView(
+        title: "请输入社会解决办法！",
+      ).showMessage();
+      return false;
+    }
+    if (selectCell.selectItemList.length < 1) {
+      ToastView(
+        title: "请选择解决办法！",
+      ).showMessage();
+      return false;
+    }
+    if (controllerPainProjectSchemeDescribe.text.length < 1) {
+      ToastView(
+        title: "请输入你的解决办法的描述！",
+      ).showMessage();
+      return false;
+    }
+    return true;
+  }
+
+  _commitResult() async {
+    Map<String, dynamic> params = {};
+    params["pageNo"] = "2";
+    params["skinBackground"] = "0";
+    params["id"] = Global.fromModel==null?"13":Global.fromModel.id;
+    params["painDescribe"] = controllerPainDescribe.text;
+    params["painOtherScheme"] = controllePainOtherScheme.text;
+    params["painProjectScheme"] = selectCell.selectItemList;
+    params["painProjectSchemeDescribe"] =
+        controllerPainProjectSchemeDescribe.text;
+    FormDataModel model = await ApiService.subCommitAllFromData(params);
+    Navigator.of(context).pushNamed("/ResultPage",
+        arguments: ConfigData().configResult(model, "痛点解决描述"));
   }
 }

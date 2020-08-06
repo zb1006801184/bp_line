@@ -16,7 +16,7 @@ class Home extends StatelessWidget {
     //已登录
     return Scaffold(
       appBar: AppBar(
-        title:  Text("首页"),
+        title: Text("首页"),
         brightness: Brightness.light,
         leading: Text(''),
       ),
@@ -53,14 +53,18 @@ class Home extends StatelessWidget {
               onTap: () {
                 Navigator.pushNamed(context, "/NetWork");
               }),
-              ListTile(
+          ListTile(
               title: Text("login"),
               onTap: () {
                 Navigator.pushNamed(context, "/Login");
+              }),
+          ListTile(
+              title: Text("refreshDemo"),
+              onTap: () {
+                Navigator.pushNamed(context, "/RefreshDemo");
               }),
         ],
       ),
     );
   }
 }
-

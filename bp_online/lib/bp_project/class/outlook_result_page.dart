@@ -52,9 +52,10 @@ class _OutlookResultPageState extends State<OutlookResultPage> {
                 bottom: 12,
                 child: ResultBottomButton("修改", "完成", () {}, () {
                   Navigator.of(context).pushAndRemoveUntil(
-                      MaterialPageRoute(builder: (context) => Person()),
+                      MaterialPageRoute(
+                          builder: (context) => Person(),
+                          settings: RouteSettings(arguments: {"type":"end"})),
                       (route) => route == null);
-                  // Navigator.of(context).pushNamedAndRemoveUntil('/Person', ModalRoute.withName('/Person'));
                 }))
           ],
         ),

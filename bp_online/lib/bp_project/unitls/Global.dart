@@ -13,9 +13,13 @@ const _themes = <MaterialColor>[
 class Global {
   //背景色
   static const BGCOLOR = Color(0xFFf4f5f7);
-  
+  //按钮背景色
+  static const BUTTONBGCOLOR = Color(0xFF1F3ABB);
+
   static SharedPreferences _prefs;
   static LoginPerson profile = LoginPerson();
+  static FormDataModel fromModel = FormDataModel();
+
   // 网络缓存对象
   // static NetCache netCache = NetCache();
 

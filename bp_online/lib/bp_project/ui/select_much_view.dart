@@ -27,7 +27,7 @@ class _SelectMuchViewState extends State<SelectMuchView> {
     itemList = widget.itemList;
     selectItemList = widget.selectItemList;
   }
-
+  
   //判断是否被选中
   bool _clickData(String item) {
     List temList = [];

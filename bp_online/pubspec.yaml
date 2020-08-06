@@ -23,6 +23,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_localizations:
+    sdk: flutter
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -36,12 +38,16 @@ dependencies:
   shared_preferences: ^0.5.8
   # toast
   fluttertoast: ^7.0.1
-
   #city picker
   city_pickers: ^0.0.1
-  
   #date  picker
   flutter_cupertino_date_picker: ^1.0.26+2
+  #加载显示器
+  loading: ^1.0.2
+  #下拉刷新加载
+  flutter_easyrefresh: ^2.1.5
+  #国际化
+  # flutter_i18n: ^0.18.0
 
 
 dev_dependencies:

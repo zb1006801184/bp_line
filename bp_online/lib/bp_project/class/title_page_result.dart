@@ -63,10 +63,13 @@ class TitlePageResult extends StatelessWidget {
                             children: <Widget>[
                               Container(
                                 margin: EdgeInsets.only(left: 16),
-                                color: Colors.red,
                                 width: 8,
                                 height: 8,
-                                // child: Image(color: Colors.red,),
+                                decoration: new BoxDecoration(
+                                  color: Global.BUTTONBGCOLOR,
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(4.0)),
+                                ),
                               ),
                               Container(
                                 margin: EdgeInsets.only(left: 8),
@@ -81,10 +84,13 @@ class TitlePageResult extends StatelessWidget {
                             children: <Widget>[
                               Container(
                                 margin: EdgeInsets.only(left: 16),
-                                color: Colors.red,
                                 width: 8,
                                 height: 8,
-                                // child: Image(color: Colors.red,),
+                                decoration: new BoxDecoration(
+                                  color: Global.BUTTONBGCOLOR,
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(4.0)),
+                                ),
                               ),
                               Container(
                                 margin: EdgeInsets.only(left: 8),
@@ -99,10 +105,13 @@ class TitlePageResult extends StatelessWidget {
                             children: <Widget>[
                               Container(
                                 margin: EdgeInsets.only(left: 16),
-                                color: Colors.red,
                                 width: 8,
                                 height: 8,
-                                // child: Image(color: Colors.red,),
+                                decoration: new BoxDecoration(
+                                  color: Global.BUTTONBGCOLOR,
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(4.0)),
+                                ),
                               ),
                               Container(
                                 margin: EdgeInsets.only(left: 8),

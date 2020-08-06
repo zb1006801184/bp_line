@@ -2,16 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b376d928-6bb1-47c1-ada1-33fbac3035ea" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/bp_line.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.flutter-plugins" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/bp_online_android.iml" beforeDir="false" afterPath="$PROJECT_DIR$/android/bp_online_android.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bp_online.iml" beforeDir="false" afterPath="$PROJECT_DIR$/bp_online.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/bp_project/network/api_url.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/bp_project/network/api_url.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Flutter/.last_build_id" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Flutter/.last_build_id" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/bp_project/class/outlook_result_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/bp_project/class/outlook_result_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/bp_project/class/plain_des_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/bp_project/class/plain_des_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/bp_project/class/result_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/bp_project/class/result_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/bp_project/class/title_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/bp_project/class/title_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/bp_project/class/title_page_result.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/bp_project/class/title_page_result.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/bp_project/network/http_utils.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/bp_project/network/http_utils.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/bp_project/person_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/bp_project/person_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/bp_project/ui/select_much_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/bp_project/ui/select_much_view.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/bp_project/ui/toast_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/bp_project/ui/toast_view.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/bp_project/unitls/Global.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/bp_project/unitls/Global.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/page/home.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/page/home.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/routes.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/routes.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,7 +39,7 @@
     <property name="dart.analysis.tool.window.force.activate" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="SvnConfiguration">
@@ -49,6 +56,10 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
+    <state x="404" y="137" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1596700200225">
+      <screen x="0" y="23" width="1440" height="804" />
+    </state>
+    <state x="404" y="137" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.23.1440.804@0.23.1440.804" timestamp="1596700200225" />
     <state width="1358" height="169" key="GridCell.Tab.0.bottom" timestamp="1596508167925">
       <screen x="0" y="23" width="1440" height="801" />
     </state>
@@ -69,19 +80,21 @@
     </state>
     <state width="1358" height="148" key="GridCell.Tab.0.right/0.23.1440.798@0.23.1440.798" timestamp="1596506784847" />
     <state width="1358" height="169" key="GridCell.Tab.0.right/0.23.1440.801@0.23.1440.801" timestamp="1596508167925" />
-    <state x="207" y="23" key="SettingsEditor" timestamp="1596507223145">
-      <screen x="0" y="23" width="1440" height="801" />
+    <state x="207" y="23" key="SettingsEditor" timestamp="1596700316784">
+      <screen x="0" y="23" width="1440" height="804" />
     </state>
     <state x="217" y="41" key="SettingsEditor/0.23.1440.798@0.23.1440.798" timestamp="1596506434766" />
     <state x="207" y="23" key="SettingsEditor/0.23.1440.801@0.23.1440.801" timestamp="1596507223145" />
+    <state x="207" y="23" key="SettingsEditor/0.23.1440.804@0.23.1440.804" timestamp="1596700316784" />
     <state x="116" y="123" width="1200" height="558" key="com.android.tools.idea.avdmanager.AvdListDialog" timestamp="1596506768011">
       <screen x="0" y="23" width="1440" height="798" />
     </state>
     <state x="116" y="123" width="1200" height="558" key="com.android.tools.idea.avdmanager.AvdListDialog/0.23.1440.798@0.23.1440.798" timestamp="1596506768011" />
-    <state x="365" y="234" key="com.intellij.ide.util.TipDialog" timestamp="1596506811263">
-      <screen x="0" y="23" width="1440" height="798" />
+    <state x="365" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1596700195678">
+      <screen x="0" y="23" width="1440" height="804" />
     </state>
     <state x="365" y="234" key="com.intellij.ide.util.TipDialog/0.23.1440.798@0.23.1440.798" timestamp="1596506811263" />
+    <state x="365" y="236" key="com.intellij.ide.util.TipDialog/0.23.1440.804@0.23.1440.804" timestamp="1596700195678" />
     <state x="381" y="148" width="670" height="676" key="search.everywhere.popup" timestamp="1596506933135">
       <screen x="0" y="23" width="1440" height="801" />
     </state>

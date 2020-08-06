@@ -33,8 +33,9 @@ import 'bp_project/class/committed_page.dart';
 import 'bp_project/class/committed_result_page.dart';
 import 'bp_project/class/outlook_page.dart';
 import 'bp_project/class/outlook_result_page.dart';
+import 'demo/refresh_demo.dart';
 final routes = {
-  // '/': (context,{arguments}) => Home(),
+  '/': (context,{arguments}) => Home(),
   '/dis': (context,{arguments}) => Dis(),
   '/test': (context, {arguments}) => Test(),
   '/listView': (context,{arguments}) => simpleListView(),
@@ -67,6 +68,8 @@ final routes = {
   '/CommittedResultPage': (context,{arguments}) => CommittedResultPage(),
   '/OutlookPage': (context,{arguments}) => OutlookPage(),
   '/OutlookResultPage': (context,{arguments}) => OutlookResultPage(),
+    '/RefreshDemo': (context,{arguments}) => RefreshDemo(),
+
 };
 
 var onGenerateRoute = (RouteSettings settings) {

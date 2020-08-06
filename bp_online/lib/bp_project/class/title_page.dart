@@ -174,10 +174,14 @@ class _TitlePageState extends State<TitlePage> {
     if (!_checkParams()) {
       return;
     }
+    ToastView().showLoading(context);
     FormDataModel model = await ApiService.subCommitAllFromData(params);
+    Global.fromModel = model;
+    ToastView().dismissLoading(context);
     if (model != null) {
     Navigator.of(context).pushNamed("/TitlePageResult", arguments: model);
     }
+
   }
 
 //校验数据
