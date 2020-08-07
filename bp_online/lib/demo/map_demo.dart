@@ -1,18 +1,36 @@
 import 'package:bp_online/page_index.dart';
 // import 'dart:math';
 import 'package:amap_map_fluttify/amap_map_fluttify.dart';
+import 'package:city_pickers/city_pickers.dart';
 
 // import 'package:decorated_flutter/decorated_flutter.dart';
 // import 'package:permission_handler/permission_handler.dart';
 // import 'package:flutter/material.dart';
 // import 'package:flutter_attendance/fluttify_map/utils/misc.dart';
 class MapDemo extends StatelessWidget {
+  AmapController _controller;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: NavBarBase().configAppBar("地图"),
         body: Column(
           children: [
+            InkWell(
+              child: Container(
+                height: 40,
+                width: Global.ksWidth,
+                child: Center(
+                  child: Text("点击点击"),
+                ),
+              ),
+              onTap: () async{
+                // _controller.clear();
+              // LatLng t =  await _controller.fromScreenLocation(Point(100, 100));
+           var t  = await _controller.toScreenLocation(LatLng(39.09, 116.32));
+          //     print("坐标x:${t.y},y:${t.x}");
+          
+              },
+            ),
             Expanded(
                 child: Container(
               child: AmapView(
@@ -40,6 +58,9 @@ class MapDemo extends StatelessWidget {
                     ),
                   ),
                 ],
+                onMapCreated: (controller) async {
+                  _controller = controller;
+                },
               ),
             )),
           ],
