@@ -19,3 +19,4 @@ export 'bp_project/models/form_data_model.dart';
 export 'bp_project/ui/select_much_view.dart';
 export 'bp_project/unitls/config_data.dart';
 export 'bp_project/ui/nav_bar_base.dart';
+export 'generated/i18n.dart';
