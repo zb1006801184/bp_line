@@ -5,9 +5,10 @@ import 'package:flutter/rendering.dart' show debugPaintSizeEnabled;
 import 'package:bp_online/page_index.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'generated/i18n.dart';
+import 'package:amap_map_fluttify/amap_map_fluttify.dart';
 
 // import 'package:flutter_i18n/flutter_i18n.dart';
-void main() {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   Global.init().then((e) {
     debugPaintSizeEnabled = false; //调试模式
@@ -19,6 +20,13 @@ void main() {
     runApp(TestDemo());
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.dark);
   });
+
+  await enableFluttifyLog(true);
+  await AmapService.instance.init(
+    iosKey: 'cbe00823663a07e543d2d54430432272',
+    androidKey: '7c9daac55e90a439f7b4304b465297fa',
+    webApiKey: 'e69c6fddf6ccf8de917f5990deaa9aa2',
+  );
 }
 
 class TestDemo extends StatefulWidget {
@@ -34,6 +42,8 @@ class _TestDemoState extends State<TestDemo> {
 
   @override
   Widget build(BuildContext context) {
+    // Locale myLocale = Localizations.localeOf(context);
+
     return new MaterialApp(
       // App名字
       title: 'bp_online',
@@ -54,7 +64,7 @@ class _TestDemoState extends State<TestDemo> {
         GlobalWidgetsLocalizations.delegate
       ],
       supportedLocales: S.delegate.supportedLocales,
-      localeResolutionCallback: S.delegate.resolution(fallback: Locale("zh","CN")),
+      // localeResolutionCallback: S.delegate.resolution(),//fallback: Locale("zh","CN")
     );
   }
 }

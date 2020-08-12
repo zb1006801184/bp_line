@@ -63,6 +63,16 @@ class Home extends StatelessWidget {
               onTap: () {
                 Navigator.pushNamed(context, "/RefreshDemo");
               }),
+          ListTile(
+              title: Text("ExpansionTileDemo"),
+              onTap: () {
+                Navigator.pushNamed(context, "/ExpansionTileDemo");
+              }),
+              ListTile(
+              title: Text("MapDemo"),
+              onTap: () {
+                Navigator.pushNamed(context, "/MapDemo");
+              }),
         ],
       ),
     );
