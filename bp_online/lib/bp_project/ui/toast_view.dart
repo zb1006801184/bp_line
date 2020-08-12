@@ -104,7 +104,7 @@ class ToastView extends StatelessWidget {
 
   showLoading(BuildContext context) {
     showDialog(
-      barrierColor: Color(0xFF),
+      // barrierColor: Color(0xFF),
       barrierDismissible: false,
       context: context,
       builder: (context) {

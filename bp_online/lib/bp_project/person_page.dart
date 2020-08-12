@@ -27,6 +27,7 @@ class _PersonState extends State<Person> {
         SystemUiOverlayStyle(statusBarColor: Colors.transparent);
     SystemChrome.setSystemUIOverlayStyle(systemUiOverlayStyle);
 
+//只会调用一次
     SchedulerBinding.instance.addPostFrameCallback((_) => {
           _requestAllData(),
         });
@@ -203,15 +204,26 @@ class _PersonState extends State<Person> {
   }
 
   void _requestAllData() async {
+    // ToastView().showLoading(context);
+    // List<FormListModel> respone = await ApiService.getAllFromData();
+    // if (respone == null) {
+    //   return;
+    // }
+    // setState(() {
+    //   _words = respone;
+    //   ToastView().dismissLoading(context);
+    // });
+    // _showMessage(argument);
+    FormListModel model = FormListModel(bpNum: "111",projectName: "项目名称",createdTime: "2020-08-12-9-57--",replyNum: 2);
     ToastView().showLoading(context);
-    List<FormListModel> respone = await ApiService.getAllFromData();
-    if (respone == null) {
-      return;
-    }
-    setState(() {
-      _words = respone;
-      ToastView().dismissLoading(context);
+    Future.delayed(Duration(seconds: 1), () {
+
+      setState(() {
+        _words.add(model);
+        _words.add(model);
+
+        ToastView().dismissLoading(context);
+      });
     });
-    _showMessage(argument);
   }
 }
