@@ -36,6 +36,7 @@ import 'bp_project/class/outlook_result_page.dart';
 import 'demo/refresh_demo.dart';
 import 'demo/expansionTile_demo.dart';
 import 'demo/map_demo.dart';
+import 'demo/grideview_demo.dart';
 final routes = {
   '/': (context,{arguments}) => Home(),
   '/dis': (context,{arguments}) => Dis(),
@@ -73,6 +74,7 @@ final routes = {
   '/RefreshDemo': (context,{arguments}) => RefreshDemo(),
   '/ExpansionTileDemo': (context,{arguments}) => ExpansionTileDemo(),
   '/MapDemo': (context,{arguments}) => MapDemo(),
+  '/GrideViewDemo': (context,{arguments}) => GrideViewDemo(),
 
 };
 
